@@ -1,6 +1,6 @@
 ---
 title: "Articles"
-editor: visual
+editor: source
 ---
 
 # Articles for 9042 class
