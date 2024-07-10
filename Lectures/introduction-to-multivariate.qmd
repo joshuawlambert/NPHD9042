@@ -1,0 +1,524 @@
+---
+title: "Introduction to Multivariate Analysis"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Table of Contents"
+    code-fold: true
+    code-tools: true 
+    css: styles.css
+---
+
+# Introduction to Multivariate Analysis
+
+## Goal: Understand the basics of multivariate analysis, including its purpose and applications
+
+### Definition of Multivariate Analysis
+
+Multivariate analysis involves the observation and analysis of more than one statistical outcome variable at a time. This type of analysis is particularly powerful in healthcare research, where it allows for the examination of multiple outcome variables simultaneously, providing a more comprehensive understanding of complex phenomena.
+
+-   **Observation and Analysis of Multiple Outcome Variables:**
+    -   Multivariate analysis considers multiple outcome variables simultaneously rather than analyzing them separately.
+    -   This approach helps to capture the interrelationships and interactions between different variables.
+    -   **Example**: In a study examining the effectiveness of a new drug, researchers might look at how multiple outcomes such as blood pressure, cholesterol levels, and heart rate simultaneously differ collectively between a new drug group and a placebo group.
+-   **Application in Healthcare Research:**
+    -   In healthcare, patient and clinical outcomes are often happening in a collective rather than independently.
+    -   Multivariate analysis enables researchers to study these outcomes together, offering insights into how they collectively change based on independent variables.
+    -   **Example**: Analyze how patient recovery (yes/no) impact lifestyle (diet, exercise) provides a more accurate picture than studying each factor in isolation.
+-   **Comprehensive Understanding of Complex Phenomena:**
+    -   By examining multiple outcome variables at once, researchers can uncover patterns and relationships that may not be evident in uni/bivariate analysis.
+
+### Overview of Discriminant Analysis
+
+Discriminant analysis is used to classify a set of observations into predefined classes. It works by finding a combination of features that best separates two or more classes of objects or events. This method is often used in healthcare for diagnostic purposes.
+
+-   **Purpose of Discriminant Analysis:**
+    -   To classify observations into predefined groups.
+    -   To identify the variables that differentiate between groups.
+    -   **Example**: Classifying patients into different risk categories based on clinical measurements.
+-   **Process:**
+    -   Collect data on multiple predictor variables.
+    -   Define the group membership for each observation.
+    -   Apply discriminant function to identify the combination of variables that best separate the groups.
+    -   **Example**: Using blood pressure, cholesterol, and BMI to predict whether a patient is at low, medium, or high risk for heart disease.
+-   **Applications in Healthcare:**
+    -   Used for diagnostic purposes, predicting outcomes, and identifying risk factors.
+    -   Helps in making informed clinical decisions.
+    -   **Example**: Determining whether a patient should undergo a specific treatment based on their risk classification.
+
+Use the <a href="Owl Diet.csv" download>Owl Diet.sav</a> dataset to complete the example Discriminant Analysis. The Owl Diet dataset contains fictional information about types of owl diets.
+
+#### Example Discriminant Analysis
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> <code> Discriminant</code>.</li>
+
+<li>Select your continuous outcome measurements as the <code>Y</code>, response, and the categorical predictor as <code>X</code>.</li>
+
+<li>Click <code>OK</code>.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        #Install Packages
+install.packages("MASS")
+install.packages("readr")
+library(readr)
+library(MASS)
+
+# Read the data file
+data <-read_csv("Owl Diet.csv")
+str(data)
+
+#Perform the Discriminant Analysis
+lda_model <- lda(`species` ~ `skull length` + `teeth row` + `palatine foramen` + `jaw length`, data = data)
+print(lda_model)
+summary(lda_model)
+
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+See details at https://medium.com/@glennlenormand/complete-guide-to-linear-discriminant-analysis-lda-in-python-d1255a5983b0
+```{=html}
+<pre>
+# Demonstraton of LDA with IRIS data in python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn import datasets
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+lda = LinearDiscriminantAnalysis(n_components=2)
+X_lda = lda.fit_transform(X, y)
+
+plt.xlabel('LD1')
+plt.ylabel('LD2')
+plt.scatter(X_lda[:,0], X_lda[:,1], c=y, cmap='rainbow', alpha=0.7, edgecolors='b')
+plt.show()
+</pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+</details>
+
+### Overview of MANOVA
+
+Multivariate Analysis of Variance (MANOVA) is an extension of ANOVA that allows for the comparison of multivariate sample means. It is used when there are two or more continuous dependent variables.
+
+-   **Purpose of MANOVA:**
+    -   To test hypotheses about the differences in multiple dependent variables across groups.
+    -   To understand how independent variables affect combinations of dependent variables.
+    -   **Example**: Examining the effect of different treatments (example: placebo/drug) on a set of health outcomes like blood pressure, cholesterol levels, and heart rate.
+-   **Process:**
+    -   Collect data on multiple dependent variables.
+    -   Define independent variables or groups.
+    -   Use MANOVA to determine if there are significant differences in the multivariate means across groups.
+    -   **Example**: Comparing the effectiveness of different medications on reducing multiple symptoms of a disease.
+-   **Applications in Healthcare:**
+    -   Used in clinical trials and healthcare studies to evaluate the effect of interventions on multiple outcomes.
+    -   Provides a comprehensive analysis of treatment effects.
+    -   **Example**: Assessing the overall impact of a lifestyle intervention on continuous physical and mental health outcomes.
+
+#### Example MANOVA
+
+Use the <a href="Blood Pressure.csv" download>Blood Pressure.csv</a> dataset to complete the example MANOVA. This dataset contains fictional data. There are 20 subjects who received either Dose A, Dose B, Placebo, or Control group assignments for a blood pressure medication. There are also repeated BP measurements over time.
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code> File </code> \> <code> Open </code> and select the "Blood Pressure.csv file.</code>.</li>
+
+<li>Go to <code>Analyze</code> \> <code>Fit Model</code>.</li>
+
+<li>Move all the blood pressure measurements into the the "Y, Responses" box.</li>
+
+<li>Move Dose into the "Construct Model Effects" box.</li>
+
+<li>In the "Personality" dropdown, select MANOVA</li>
+
+<li>Click <code>Run</code> and under "Response Specification", click <code>Compound</code> from the red triangle menu.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+       # Load necessary libraries
+library(tidyverse)
+
+# Load the dataset
+data_1 <-read_csv("Blood Pressure.csv")
+
+#Perform the MANOVA
+manova_model <- manova(cbind(`BP 8M`, `BP 12M`, `BP 6M`, `BP 8W`) ~ `Dose`, data = data_1)
+
+#Print and summarize the results
+print(manova_model)
+summary(manova_model)
+
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+
+See other examples at https://www.geeksforgeeks.org/manova-multivariate-analysis-of-variance/
+```{=html}
+<pre>
+# Importing necessary libraries
+
+import pandas as pd
+from statsmodels.multivariate.manova import MANOVA
+from sklearn.datasets import load_iris
+
+# Use iris as sample data
+data = load_iris()
+df = pd.DataFrame(data.data, columns=data.feature_names)
+df['species'] = data.target
+print(df.head())
+
+
+# Rename columns to remove spaces in col names
+df.columns = ['sepal_length', 'sepal_width',
+              'petal_length', 'petal_width', 'species']
+
+# Replace target numbers with their respective names for clarity in results
+df['species'] = df['species'].map(
+    {0: 'setosa', 1: 'versicolor', 2: 'virginica'})
+
+# Apply MANOVA with the renamed cols
+manova = MANOVA.from_formula('sepal_length + sepal_width + petal_length + petal_width ~ species', data=df)
+result = manova.mv_test()
+print(result)
+
+
+</pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+### Overview of Principal Components Analysis (PCA)
+
+PCA is a technique used to emphasize variation and bring out strong patterns in a dataset. It is particularly useful in reducing the dimensionality (number of variables) of large datasets, simplifying the complexity without losing significant information.
+
+-   **Purpose of PCA:**
+    -   To reduce the number of variables in a dataset while retaining most of the variation.
+    -   To identify the principal components that explain the most variance in the data.
+    -   **Example**: Simplifying a dataset with dozens of health indicators to a few new variables (principal components) that capture the most significant patterns.
+-   **Process:**
+    -   Standardize the data if the variables are measured on different scales.
+    -   Compute the covariance matrix or correlation matrix.
+    -   Extract the eigenvalues and eigenvectors to identify the principal components.
+    -   More on PCA in our next lecture.
+    -   **Example**: Using PCA to reduce a large number of survey questions into a few key factors that summarize patient satisfaction.
+-   **Applications in Nursing Research:**
+    -   Identifying key factors that influence patient outcomes.
+    -   Simplifying complex datasets to facilitate analysis and interpretation.
+    -   **Example**: Determining the main factors contributing to patient recovery in a rehabilitation study.
+
+Use the <a href="Body Measurements.csv" download>Body Measurements.csv</a> dataset to complete the example PCA. This dataset contains the weight and physical measurements of 22 male subjects between 16-30 years old.
+
+#### Example of PCA
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Principal Components</code>.</li>
+
+<li>Select the variables you want to include in the analysis and click <code>OK</code>.</li>
+
+<li>Click the red triangle and select <code>Scree Plot and Eigenvalues</code>.</li>
+
+<li>Review the output, including the principal components and their loadings.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        #Load Data
+your_data<-read.csv("Body Measurements.csv")
+#Run PCA
+pca_model <- prcomp(your_data, scale = TRUE)
+#Print and view results
+print(pca_model)
+summary(pca_model)
+plot(pca_model)
+#Scree Plot
+plot(pca_model, type = "l")
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        # Import necessary libraries
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+# Load the dataset
+data = pd.read_csv("/path/to/Body Measurements.csv")
+
+# Drop any non-numeric columns if present, assuming all numeric columns are for PCA
+numeric_data = data.select_dtypes(include=[float, int])
+
+# Standardize the data
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(numeric_data)
+
+# Perform PCA
+pca = PCA(n_components=2)  # Adjust n_components as needed
+principal_components = pca.fit_transform(scaled_data)
+
+# Create a DataFrame with the principal components
+pc_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
+
+# Output the explained variance ratio
+print("Explained Variance Ratio:", pca.explained_variance_ratio_)
+
+# Plot the principal components
+plt.figure(figsize=(8, 6))
+plt.scatter(pc_df['PC1'], pc_df['PC2'], alpha=0.5)
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.title('PCA of Body Measurements')
+plt.show()
+
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+### Introduction to Exploratory Factor Analysis (EFA)
+
+EFA is used to identify the underlying relationships between measured variables. It helps in understanding the structure of a set of variables and in identifying the underlying unobserved (latent) variables. In nursing research, EFA can uncover hidden patterns in survey data or clinical assessments.
+
+-   **Purpose of EFA:**
+    -   To explore the underlying structure of a set of variables.
+    -   To identify unobserved (latent) factors that explain the correlations among observed variables.
+    -   **Example**: Exploring the underlying dimensions of patient-reported outcomes in a quality of life survey.
+-   **Process:**
+    -   Collect data on multiple observed variables.
+    -   Compute the correlation matrix.
+    -   Extract factors using methods such as principal axis factoring or maximum likelihood.
+    -   Rotate the factors to achieve a simpler and more interpretable structure.
+    -   **Example**: Using EFA to identify latent factors like physical health, mental health, and social functioning from a set of health survey items.
+-   **Applications in Nursing Research:**
+    -   Identifying latent constructs that are not directly observable.
+    -   Understanding the dimensions of complex constructs such as patient satisfaction or quality of care.
+    -   **Example**: Uncovering the underlying factors that contribute to nurse burnout.
+
+Use the <a href="Williams.sav" download>Williams.sav</a> dataset to complete the example PCA. This dataset contains an 28-item questionnaire (measured on a 7-point Likert scale) on organizational ability. It contains 5 theoretical dimensions: (1) preference for organization; (2) goal achievement; (3) planning approach; (4) acceptance of delays; and (5) preference for routine.
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Factor Analysis</code>.</li>
+
+<li>
+
+Select the variables you want to include and place them into the <code> Y, columns</code>.
+
+<li>Select the variance estimation (e.g., REML) you want to use from the <code> Variance Estimation</code>dropdown. Click <code>OK</code>.</li>
+
+<li>Review the output, including the factor loadings and the scree plot.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        #Install and load the libraries
+install.packages(haven)
+install.packages(psych)
+library(haven)
+library(psych)
+#Read the file
+efa_data<-read.csv("Williams.sav")
+#Run the EFA
+efa_result <- fa(efa_data, nfactors = 3, rotate = "varimax")
+print(efa_result)
+fa.diagram(efa_result)
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        import pandas as pd
+import pyreadstat
+from factor_analyzer import FactorAnalyzer
+
+# Read SPSS file
+my_data, metadata = pyreadstat.read_sav("Williams.sav")
+
+# Convert to pandas DataFrame
+my_data = pd.DataFrame(my_data)
+
+# Display the first few rows of the DataFrame
+print(my_data.head())
+
+# Perform EFA
+efa = FactorAnalyzer(n_factors=2, rotation="varimax")
+efa.fit(my_data)
+
+# View results
+print(efa.get_factor_variance())
+print(efa.loadings_)
+</pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+### Differences between EFA and PCA
+
+While both EFA and PCA can be used for data reduction, and latent variable or composite variable creation, they have different purposes. PCA is a technique for reducing the dimensionality of data while preserving as much variance as possible. EFA, on the other hand, is used to uncover the underlying unobserved (latent) structure of a set of variables.
+
+-   **PCA:**
+    -   Focuses on reducing dimensionality by transforming variables into principal components.
+    -   Each principal component is a linear combination of the original variables.
+    -   **Example**: Reducing the number of health indicators to a few principal components that capture the most variance.
+-   **EFA:**
+    -   Aims to identify the latent structure among variables.
+    -   Factors are assumed to *cause* the observed variables and are estimated based on the shared variance.
+    -   **Example**: Identifying underlying factors such as stress, fatigue, and job satisfaction from a set of survey questions on nurse well-being.
+
+## Summary
+
+Understanding multivariate analysis and its applications is crucial for advanced nursing research. Techniques like Discriminant Analysis, MANOVA, PCA, and EFA allow researchers to analyze complex datasets and uncover valuable insights that can improve patient outcomes and healthcare practices.
+
+-   **Importance of Multivariate Analysis:**
+    -   Provides a comprehensive understanding of complex healthcare phenomena.
+    -   Enables the simultaneous examination of multiple variables and their interactions.
+    -   **Example**: Improving patient care by understanding the combined effects of various treatment factors.
+-   **Techniques and Applications:**
+    -   **Discriminant Analysis**: Classifying patients into risk categories.
+    -   **MANOVA**: Comparing treatment effects on multiple health outcomes.
+    -   **PCA**: Simplifying large datasets to identify key factors.
+    -   **EFA**: Exploring underlying dimensions in survey data.
+    -   **Example**: Using these techniques to inform clinical decision-making and healthcare policies.

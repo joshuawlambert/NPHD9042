@@ -1,0 +1,209 @@
+---
+title: "Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Table of Contents"
+    code-fold: true
+    code-tools: true 
+    css: styles.css
+---
+
+### Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)
+
+## Understanding the Basics of Confirmatory Factor Analysis (CFA) and Path Analysis (PA) and their Application in Nursing Research
+
+Confirmatory Factor Analysis (CFA) and Path Analysis (PA) are essential statistical techniques used to validate measurement models and examine causal relationships between variables, respectively. These methods are crucial in nursing research for understanding complex phenomena and testing theoretical models.
+
+### CFA vs. EFA
+
+-   **Exploratory Factor Analysis (EFA)** is used when you do not have a clear hypothesis about the structure or number of factors.
+-   **Confirmatory Factor Analysis (CFA)** is used when you have specific hypotheses or models to test based on theory or prior research.
+
+### Example: One Factor Analysis using SPSS Anxiety Questionnaire
+
+To conduct a CFA with an anxiety questionnaire in SPSS:
+
+1.  **Data Preparation**: Ensure data is clean and appropriately coded.
+2.  **Model Specification**: Define the factor structure based on theoretical expectations.
+3.  **Run CFA in Statistical Software**: See below for examples.
+
+### Interpreting CFA Symbols, Intro to Path Analysis
+
+CFA uses various symbols to represent latent variables, observed variables, and the relationships between them. Path analysis extends this by allowing for more complex models, including direct and indirect effects between observed and latent variables.
+
+![](images/sem3.png)
+
+### Define Path Analysis, Contrast with CFA and EFA
+
+Path analysis is a type of structural equation modeling (SEM) that examines the direct relationship among a set of observed variables. 
+
+### Define Path Diagram
+
+A path diagram visually represents the hypothesized relationships among variables. It includes: - **Observed Variables**: Represented by rectangles. 
+
+### Special Considerations: No Latent Variables, Correlation vs. Causation
+
+-   **No Latent Variables**: Path analysis can be conducted without latent variables, focusing only on observed variables.
+-   **Correlation vs. Causation**: Path analysis can help infer causality, but it is essential to consider the theoretical basis and experimental design to make causal claims.
+
+### Assessing Goodness of Fit (CFI and RMSEA)
+
+-   **Comparative Fit Index (CFI)**: Values close to 1 indicate a good fit.
+-   **Root Mean Square Error of Approximation (RMSEA)**: Values less than 0.06 indicate a good fit.
+
+### Example, Hands-on CFA Exercise in Statistical Software
+
+You can use the <a href="worland5.csv" download>worland5.csv</a> as an example. This hypothetical dataset examines the effects of student background on academic achievement. It contains 9 observed variables (Motivation, Harmony, Stability, Negative Parental Psychology, SES, Verbal IQ, Reading, Arithmetic and Spelling) and 3 hypothesized latent constructs (Adjustment, Risk, Achievement).
+
+#### JMP Instructions:
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Multivariate</code>.</li>
+
+<li>Select your variables and click <code>OK</code>.</li>
+
+<li>Configure the model and click <code>Run</code>.</li>
+
+</ul>
+
+</details>
+
+#### R Code Example:
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        # Load necessary library
+        library(lavaan)
+        #load your data
+        mydata3<-read.csv("worland5.csv") # adjust the file path accordingly
+
+        # Define the model
+        model <- 'adjustment  =~ motiv + harm + stabi'
+
+        # Fit the model
+        fit <- cfa(model, data = mydata3)
+
+        # Summarize the results
+        summary(fit, fit.measures = TRUE)
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+#### Python Code Example:
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>   pip install factor_analyzer
+        import pandas as pd
+        from factor_analyzer import FactorAnalyzer
+        from factor_analyzer import ConfirmatoryFactorAnalyzer
+        from factor_analyzer import ModelSpecificationParser
+        
+        
+        df_features = pd.read_csv('worland5.csv')
+
+        # Define the model
+        model = {
+          'adjustment': ['motiv', 'harm', 'stabi'],
+        }
+        
+      model_spec = ModelSpecificationParser.parse_model_specification_from_dict(df_features,
+                                                                              model)
+        # Fit the model
+        cfa = ConfirmatoryFactorAnalyzer(model_spec)
+        cfa.fit(df_features.values)
+
+        # Display the results
+        print(cfa.loadings_)
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+#### SPSS Instructions:
+
+<details>
+
+<summary>SPSS Instructions:</summary>
+
+CFA can be performed in AMOS, a seperate tool built for conducting SEM for 
+SPSS users
+see more about the AMOS platform at
+
+http://amosdevelopment.com/
+<ul>
+
+
+
+</ul>
+
+</details>
+
+#### Stata Code Example:
+
+<details>
+
+<summary>Stata Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+        //  CFA for Single-factor measurement model
+        // Load data, example is the auto data in stata
+        use auto, clear
+         
+
+        // Define and fit the model
+        
+        sem (trunk weight length gear_ratio<-Auto_character)
+
+        //get standardized values
+       
+        sem, standardized
+        
+        //get godness of fit
+        estat gof,stats(all)
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+### Interpreting Your Results, Refining, Write-up
+
+After running your CFA or path analysis, interpret the results focusing on the goodness of fit indices and the significance of path coefficients. Refining the model may involve adding or removing paths or re-specifying the factor structure based on theoretical considerations and model diagnostics. Document the final model and its implications for nursing research in a clear and structured manner.

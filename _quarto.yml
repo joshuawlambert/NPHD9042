@@ -1,0 +1,58 @@
+# _quarto.yml
+
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "NPHD 9042 -- Applied Multivariate Analysis"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Syllabus"
+        href: Other/syl.qmd
+      - text: "Lectures"
+        menu:
+          - text: "Introduction to Multivariate Analysis"
+            href: Lectures/introduction-to-multivariate.qmd
+          - text: "Introduction to Exploratory Factor Analysis(EFA)"
+            href: Lectures/introduction-to-EFA.qmd
+          - text: "Advanced Regression and Model Building"
+            href: Lectures/advanced_regression.qmd
+          - text: "Introduction to Structual Equation Modeling (SEM)"
+            href: Lectures/introduction-to-SEM.qmd
+          - text: "Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)"
+            href: Lectures/introduction-to-CFA-PA.qmd
+          - text: "Introduction to Classifcation and Regression Tree (CART)"
+            href: Lectures/introduction-to-CART.qmd  
+          - text: "Writing Guide for Academic Writers"
+            href: Lectures/writing.qmd
+      - text: "Vocabulary & Jargon"
+        href: Flashcards/VocabJargon.qmd
+      - text: "Assignments"
+        menu:
+          - text: "HW 1"
+            href: Assignments/hw1.qmd
+          - text: "HW 2"
+            href: Assignments/hw2.qmd
+          - text: "HW 3"
+            href: Assignments/hw3.qmd
+          - text: "HW 4"
+            href: Assignments/hw4.qmd
+      - text: "Articles"
+        href: Articles/articles.qmd
+      - text: "About Dr. L"
+        href: Other/aboutDrL.qmd
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: journal
+    columns: 12
+    css: styles.css
+
+
+
+

@@ -1,0 +1,66 @@
+---
+title: "Welcome to NPHD9042"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Topics"
+    css: styles.css
+---
+
+# Welcome to NPHD 9042 -- Applied Multivariate Analysis
+
+Hello and welcome to NPHD 9042 -- Applied Multivariate Analysis!
+
+I'm Dr. Joshua Lambert, and I'll be your instructor for this course. I'm excited to guide you through this journey as we explore the fascinating world of advanced statistical methods and their application in nursing and healthcare research.
+
+## How to Reach Me
+
+-   **Email:** [joshua.lambert\@uc.edu](mailto:joshua.lambert@uc.edu)
+
+Feel free to reach out to me with any questions or concerns. I'm here to help you succeed in this course and deepen your understanding of the topics we will cover.
+
+## Overview of NPHD9042
+
+NPHD9042 is designed to provide an in-depth exploration of advanced *multivariate* statistical methods relevant to healthcare research. The course emphasizes practical applications using statistical software. Topics include:
+
+### [Introduction to Multivariate Analysis](Lectures/introduction-to-multivariate.qmd)
+
+-   Overview of multivariate techniques
+-   Applications in healthcare research
+-   Multivariate normal distribution
+
+### [Introduction to Exploratory Factor Analysis (EFA)](Lectures/introduction-to-EFA.qmd)
+
+-   Purpose and methodology of EFA
+-   Extraction methods and factor rotation
+-   Interpreting factor loadings
+
+### [Advanced Regression and Model Building](Lectures/advanced_regression.qmd)
+
+-   Multiple regression techniques
+-   Model selection and validation
+-   Dealing with multicollinearity
+
+### [Introduction to Structural Equation Modeling (SEM)](Lectures/introduction-to-SEM.qmd)
+
+-   Basics of SEM and path analysis
+-   Model specification and identification
+-   Assessing model fit
+
+### [Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)](Lectures/introduction-to-CFA-PA.qmd)
+
+-   Distinction between CFA and EFA
+-   Application of CFA in healthcare research
+-   Basics of path analysis and its use in structural models
+
+### [Introduction to Classification and Regression Tree (CART)](Lectures/introduction-to-CART.qmd)
+
+-   Fundamentals of CART modeling
+-   Building and interpreting decision trees
+-   Applications in clinical decision-making and research
+
+### [Writing Guide for Academic Writers](Lectures/writing.qmd)
+
+### [Articles](Articles/articles.qmd)

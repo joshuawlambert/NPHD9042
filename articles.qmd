@@ -1,0 +1,22 @@
+---
+title: "Articles"
+editor: visual
+---
+
+# Articles for 9042 class
+
+## Articles
+
+-   [Exploratory factor analysis and principal component analysis in clinical studies: Which one should you use?](Articles/EFA_paper_1.pdf)
+-   [Variable selection strategies and its importance in clinical prediction modelling](Articles/Variable_Selection_paper1.pdf)
+-   [Secondary data analysis as an efficient and effective approach to nursing research](Articles/Secondary_data_analysis.pdf)
+-   [On exploratory factor analysis: A review of recent evidence, an assessment of current practice, and recommendations for future use](Articles/EFA_Review_paper.pdf)
+-   [Modeling and variable selection in epidemiologic analysis.](Articles/Modeling_and_variable_selection.pdf)
+-   [Understanding poisson regression. ](Articles/Poisson_regression.pdf)
+-   [Zero-inflated Poisson modeling of fall risk factors in community-dwelling older adults.](Articles/Zero_inflated_poisson.pdf)
+-   [Testing and verifying nursing theory by confirmatory factor analysis](Articles/Testing_nursing_theory_by_CFA.pdf)
+-   [The process and utility of classification and regression tree methodology in nursing research.](Articles/classification_regression_tree.pdf)
+-   [Interpreting evidence from structural equation modeling in nursing practice.](Articles/SEM_paper1.pdf)
+-   [How artificial intelligence is changing nursing](Articles/AI_in_Nursing.pdf)
+-   [A systematic review of structural equation modelling in nursing research](Articles/SEM_paper2.pdf)
+-   [The application of big data and the development of nursing science\_ A discussion paper.](Articles/big_data.pdf)

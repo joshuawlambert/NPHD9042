@@ -1,0 +1,55 @@
+---
+title: "Homework 1 Exploratory Factor Analysis"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Homework 1"
+    code-fold: true
+    code-tools: true
+---
+
+# Exploratory Factor Analysis (EFA) Assignment
+
+This assignment uses the <a href="Williams.sav" download>Williams.sav</a>
+
+Use the Williams.sav dataset to complete an exploratory factor analysis. A description of the data and the questions and the dataset can be found on Canvas. Answer the following questions using a statistical software of your choice.
+
+## Questions
+
+### 1. Correlation Matrix
+
+Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.
+
+### 2. Maximum Likelihood and Varimax Rotation
+
+-   What is the conclusion of Bartlett's Test for Sphericity?
+-   What does the varimax method assume?
+-   How many factors have eigenvalues \> 1?
+-   Extract that many factors. What are the rotated factor loadings? Put the table here.
+-   What percent of variance do these factors cumulatively explain?
+-   How would you interpret these factors? What labels would you give them?
+
+### 3. Principal Axis Factoring and Varimax Rotation
+
+-   Why do we not do Bartlett's Test for PAF?
+-   What does the varimax method assume?
+-   How many factors have eigenvalues \> 1?
+-   Extract that many factors. What are the rotated factor loadings? Put the table here.
+-   What percent of variance do these factors cumulatively explain?
+-   How would you interpret these factors? What labels would you give them?
+
+### 4. Principal Axis Factoring and Quartimin Rotation
+
+-   What does the varimax method assume?
+-   How many factors have eigenvalues \> 1?
+-   Extract that many factors. What are the rotated factor loadings? Put the table here.
+-   What percent of variance do these factors cumulatively explain?
+-   How would you interpret these factors? What labels would you give them?
+
+### 5. Comparison of Analyses
+
+Compare and contrast the analyses from questions 2 to 4. Write one to two paragraphs describing their similarities and differences. Which
+
+------------------------------------------------------------------------

@@ -1,0 +1,318 @@
+---
+title: "Introduction to Exploratory Factor Analysis (EFA)"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Table of Contents"
+    code-fold: true
+    code-tools: true 
+    css: styles.css
+---
+
+# Introduction to Exploratory Factor Analysis (EFA)
+
+Exploratory Factor Analysis (EFA) is a statistical technique used to uncover the underlying structure of a relatively large set of variables. It is often used in research to identify latent variables that cannot be measured directly.
+
+## Understanding the Basics of Latent Variables
+
+-   **Definition**: Latent variables are variables that are not directly observed but are inferred from other variables that are observed (measured).
+-   **Examples**:
+    -   Intelligence inferred from cognitive test scores.
+    -   Depression inferred from responses to psychological questionnaires.
+-   **Importance in Research**:
+    -   Helps in understanding underlying constructs that are not directly measurable.
+    -   Essential in fields like psychology, education, and social sciences where many constructs are abstract.
+
+## Understanding an R Matrix/Correlations
+
+![Correlation Matrix](images/efa1.png)
+
+-   **R Matrix**:
+    -   A correlation matrix showing the correlation coefficients between pairs of variables.
+    -   Each cell in the matrix represents the correlation between two continuous variables.
+-   **Interpreting Correlations**:
+    -   Correlation values range from -1 to 1.
+    -   Correlation is a measure of the strength of the linear relationship between two continuous variables.
+    -   Closer to 1 or -1 indicates strong positive or negative correlation, while closer to 0 indicates weak correlation.
+-   **Uses in EFA**:
+    -   Identifies patterns of correlations.
+    -   Variables that are correlated are likely being influenced by the same underlying latent factor.
+    -   Helps in determining the suitability of data for factor analysis.
+    -   Use the correlation matrix (R Matrix) to check for clusters of variables that are correlated. If there is a lack of clusters then your data may not be suitable for EFA.
+    -   Checking the correlation matrix (R Matrix) for a large dataset can be difficult.
+
+## Measurement Theory
+
+-   **Definition**: The study of how to assign numbers to objects and events according to rules.
+-   **Components**:
+    -   **Constructs**: Theoretical concepts being measured (e.g., intelligence, satisfaction).
+    -   **Indicators**: Observed variables that reflect or are influenced by the constructs.
+-   **Applications**:
+    -   Ensuring that the indicators accurately and reliably measure or are influenced by the constructs.
+    -   Validating the measurement instruments.
+
+## Differences Between PCA and EFA
+
+-   **Principal Component Analysis (PCA)**:
+    -   Aimed at reducing the dimensionality of the data.
+    -   Transforms the variables into a new set of uncorrelated components.
+    -   Components are linear combinations of the original variables.
+-   **Exploratory Factor Analysis (EFA)**:
+    -   Researcher uses EFA because they believe there are latent (unobserved) variables.
+    -   Seeks to identify latent factors that explain the correlations among variables.
+    -   Factors are assumed to cause the observed variables.
+    -   Factors can be assumed to be correlated or or uncorrelated.
+-   **Key Differences**:
+    -   **Goal**: PCA is descriptive, EFA is explanatory.
+    -   **Components vs. Factors**: PCA components are not based on underlying constructs, whereas EFA factors are.
+
+## Pre-Analysis (Correlations, Descriptives, etc.)
+
+-   **Steps**:
+    -   **Check for Correlations**: Ensure variables are sufficiently correlated for EFA. Check R Matrix.
+    -   **Descriptive Statistics**: Examine means, standard deviations, and distribution shapes. Floor and Ceiling Effects.
+    -   **Assumptions**:
+        -   Adequate sample size (at least 5-10 times the number of variables).
+        -   Normality of variables.
+        -   Linearity and homoscedasticity.
+
+## Factoring Methods (Principal Axis, Maximum Likelihood)
+
+-   **Principal Axis Factoring (PAF)**:
+    -   Focuses on shared variance.
+    -   Suitable for data where normality cannot be assumed.
+-   **Maximum Likelihood (ML)**:
+    -   Assumes multivariate normality.
+    -   Provides goodness-of-fit measures.
+    -   Useful for hypothesis testing about the factor structure.
+-   **Choosing the Method**:
+    -   Depends on the nature of the data and research objectives.
+    -   ML is preferred for confirmatory purposes, PAF for exploratory purposes.
+
+## Prior Communality
+
+-   **Definition**: Estimate of the variance in each variable accounted for by the common factors.
+-   **Methods of Estimation**:
+    -   Squared multiple correlations.
+    -   Setting to a default value such as 1.
+-   **Role in EFA**:
+    -   Helps in the initial extraction of factors.
+    -   Influences the factor solution and interpretation.
+
+## Choosing Your Eigenvalue, Rotation Method
+
+-   **Eigenvalue**:
+    -   Represents the amount of variance explained by each factor.
+    -   Common rule: retain factors with eigenvalues greater than 1.
+-   **Rotation Methods**:
+    -   **Varimax (Orthogonal)**:
+        -   Simplifies the loadings to make interpretation easier.
+        -   Assumes factors are uncorrelated.
+    -   **Promax (Oblique)**:
+        -   Allows for correlated factors.
+        -   Provides a more realistic representation of the data.
+-   **Purpose of Rotation**:
+    -   Enhances interpretability of the factor solution.
+    -   Clarifies the structure by maximizing high loadings and minimizing low loadings on each factor.
+
+## Picking the number of factors and understanding loadings
+
+### Picking the Number of Factors
+
+-   **Eigenvalues Greater Than 1**:
+    -   Use the Kaiser criterion, which suggests retaining factors with eigenvalues greater than 1.
+    -   Factors with eigenvalues above 1 explain more variance than a single observed variable.
+-   **Scree Plot**:
+    -   Examine the scree plot for an "elbow point," where the slope of eigenvalues levels off.
+    -   Retain factors before the point where the plot starts to flatten.
+-   **Parallel Analysis**:
+    -   Compare the observed eigenvalues to those obtained from random data of the same size.
+    -   Retain factors with observed eigenvalues greater than the corresponding random eigenvalues.
+
+![](images/efa2.png)
+
+-   **Cumulative Variance Explained**:
+    -   Consider the total variance explained by the retained factors.
+    -   Aim for a solution that explains a substantial proportion of the total variance (e.g., 70-80%).
+-   **Theoretical Considerations**:
+    -   Consider the theoretical framework and prior research.
+    -   Ensure the number of factors makes sense in the context of the study's conceptual model.
+
+### Understanding Loadings
+
+![](images/efa4.png)
+
+-   **Factor Loadings**:
+    -   Represent the correlation between observed variables and the latent factor.
+    -   Loadings range from -1 to 1, with higher absolute values indicating stronger relationships.
+-   **Significant Loadings**:
+    -   Loadings greater than ±0.30 are generally considered significant.
+    -   Higher thresholds (e.g., ±0.50 or ±0.60) indicate more robust relationships.
+-   **Interpreting Factors**:
+    -   Label factors based on the variables with the highest loadings.
+    -   Consider the conceptual meaning and relevance of the variables in the context of the study.
+-   **Rotation Methods**:
+    -   Use rotation methods (e.g., varimax, oblimin) to achieve a simpler, more interpretable structure.
+    -   Orthogonal rotations (e.g., varimax) assume factors are uncorrelated, while oblique rotations (e.g., oblimin) allow for correlated factors.
+-   **Interpreting Results**:
+    -   **Picking the number of factors**: use the scree plot or eigenvalue rule.
+
+    -   **Factor Loadings**: Indicates the strength and direction of the relationship between variables and factors.
+
+    -   **Communalities**: Indicates the proportion of each variable's variance explained by the factors.
+
+    -   **Variance Explained**: The total variance accounted for by all the factors.
+-   **Writing Up**:
+    -   Describe the data and the preliminary analysis.
+    -   Detail the extraction method and rotation used.
+    -   Show scree plot and argue why you are choosing the number of factors you are.
+    -   Present the factor loadings, communalities, and variance explained via tables and figures.
+    -   Discuss the theoretical and practical implications of the factors.
+
+By understanding the basics of EFA, latent variables, and their application in research, researchers can effectively use this technique to uncover underlying structures in their data, providing valuable insights and advancing knowledge in their field.
+
+# Software Examples
+
+Here are examples of how to perform EFA in various statistical software packages: Use the <a href="Williams.sav" download>Williams.sav</a> dataset to complete the analysis. This dataset contains an 28-item questionnaire (measured on a 7-point Likert scale) on organizational ability. It contains 5 theoretical dimensions based on the underlying measurement theory: (1) preference for organization; (2) goal achievement; (3) planning approach; (4) acceptance of delays; and (5) preference for routine.
+
+<details>
+
+<summary>JMP Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Factor Analysis</code>.</li>
+
+<li>Select your variables and move them to the <code>Y, Columns</code> box.</li>
+
+<li>Click <code>OK</code>.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>R Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+       library(haven)
+my_data<-read_sav("Williams.sav")
+library(psych)
+head(my_data)
+
+efa <- fa(my_data, nfactors = 2, rotate = "varimax")
+        
+        # View results
+print(efa)
+
+print(loadings(efa ))
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>Python Code Example:</summary>
+
+<ul>
+
+<li>
+
+```{=html}
+<pre>
+import pandas as pd
+import pyreadstat
+from factor_analyzer import FactorAnalyzer
+
+# Read SPSS file
+my_data, metadata = pyreadstat.read_sav("Williams.sav")
+
+# Convert to pandas DataFrame
+my_data = pd.DataFrame(my_data)
+
+# Display the first few rows of the DataFrame
+print(my_data.head())
+
+# Perform EFA
+efa = FactorAnalyzer(n_factors=2, rotation="varimax")
+efa.fit(my_data)
+
+# View results
+print(efa.get_factor_variance())
+print(efa.loadings_)
+
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>SPSS Instructions:</summary>
+
+<ul>
+
+<li>Go to <code>Analyze</code> \> <code>Dimension Reduction</code> \> <code>Factor</code>.</li>
+
+<li>Select your variables and move them to the <code>Variables</code> box.</li>
+
+<li>Choose the extraction method (e.g., Principal Axis Factoring) and rotation method (e.g., Varimax).</li>
+
+<li>Click <code>OK</code>.</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>STATA Code Example:</summary>
+
+<ul>
+
+<li>
+
+
+**see stata examples here** https://libguides.princeton.edu/factor
+```{=html}
+<pre>
+        // Load the necessary data. eg auto data
+        sysuse auto,clear
+        
+        // Perform EFA
+        *simple factor analysis 
+       factor price trunk weight length foreign gear_ratio
+       
+        *then rotate to see rotated factors
+        rotate 
+        
+        *Principal-component factor analysis 
+         factor price trunk weight length foreign gear_ratio,pcf
+         
+          *then rotate to see rotated factors
+         rotate
+        
+      </pre>
+```
+</li>
+
+</ul>
+
+</details>
+
+By understanding the basics of EFA and its application in various software environments, you can effectively analyze latent structures in your data and contribute valuable insights to your research.

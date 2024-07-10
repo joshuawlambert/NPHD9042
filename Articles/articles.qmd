@@ -1,0 +1,83 @@
+---
+title: "Articles"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Articles"
+    code-fold: true
+    code-tools: true
+---
+
+1. [Modeling and variable selection in epidemiologic analysis](Modeling_and_variable_selection.pdf)
+   
+  *First author*: Sander Greenland
+  
+  This paper discusses strategies for modeling and variable selection in epidemiologic studies. It covers topics such as categorization of continuous variables, selection of control variables, and the use of stepwise regression methods. The author emphasizes the importance of considering both statistical criteria and subject-matter knowledge when selecting variables and building models in epidemiologic research.
+
+2. [Secondary Data Analysis as an Efficient and Effective Approach to Nursing Research](Secondary_data_analysis.pdf)
+
+  *Author*: Susan L. Dunn
+
+  This article discusses the benefits and limitations of secondary data analysis in nursing research. It highlights how secondary data analysis can be a cost-effective method to explore new research questions and hypotheses using existing data sets. The authors provide examples of secondary data analysis in nursing, emphasizing its potential to advance nursing knowledge and practice despite challenges such as data quality and the need for appropriate analytical skills.
+
+3. [Variable Selection Strategies and Its Importance in Clinical Prediction Modelling](Variable_Selection_paper1.pdf)
+
+  *Author*: Mohammad Ziaul Islam Chowdhury
+
+  This paper provides an overview of variable selection methods in clinical prediction modeling, including backward elimination, forward selection, stepwise selection, and all possible subset selection. The authors discuss the importance of selecting appropriate variables to improve model accuracy and reduce complexity. They also address stopping rules and selection criteria like Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC), emphasizing the balance between model simplicity and fit.
+
+4. [Understanding Poisson Regression](possion_regression.pdf)
+
+  *Author*: Matthew J. Hayat
+
+  The article introduces Poisson regression as a method for analyzing count data in nursing and health research. It explains the assumptions of the Poisson distribution and addresses issues like overdispersion and zero-inflation. The authors use data from the ENSPIRE study to illustrate the application of Poisson regression, comparing it with other regression methods and highlighting its advantages in handling count data accurately.
+
+5. [On exploratory factor analysis: A review of recent evidence, an assessment of current practice, and recommendations for future use](EFA_Review_paper.pdf)
+   
+  *First author*: C.J. Gaskin
+   
+  This paper reviews recent literature on exploratory factor analysis (EFA) and assesses current practices in nursing research. It focuses on five key decisions in EFA: determining sample size, choosing between EFA and principal component analysis, selecting the number of factors to retain, choosing data extraction methods, and deciding on factor rotation methods. The authors provide evidence-based recommendations for each decision to improve EFA practices in nursing research.
+
+6. [Exploratory factor analysis and principal component analysis in clinical studies: Which one should you use?](EFA_paper_1.pdf)
+   
+  *First author*: Mousa Alavi
+   
+  This editorial compares exploratory factor analysis (EFA) and principal component analysis (PCA), highlighting their conceptual and statistical differences. It explains that EFA is used to uncover underlying factors, while PCA is primarily for data reduction. The authors provide guidance on choosing between EFA and PCA based on research objectives and data characteristics, using examples from clinical studies.
+
+
+
+7. [Testing and Verifying Nursing Theory by Confirmatory Factor Analysis](Testing_nursing_theory_by_CFA.pdf)
+
+  *Author*: Maria Kääriäinen
+
+  This article explores the use of confirmatory factor analysis (CFA) to test and verify nursing theories. The authors explain the phases of CFA, including preparation, model testing, and reporting results. They highlight the importance of CFA in validating theoretical constructs and relationships within nursing theories, providing a structured approach to empirical testing and theory development in nursing science.
+
+8. [Interpreting evidence from structural equation modeling in nursing practice](SEM_paper1.pdf)
+   
+  *First author*: Kathy Newman
+
+  This article introduces structural equation modeling (SEM) and its applications in nursing research. It explains the key concepts of SEM, including path analysis, latent variables, and model fit indices. The authors provide guidance on interpreting SEM results and discuss the strengths and limitations of this statistical approach for nursing practice.
+   
+9. [The process and utility of classification and regression tree methodology in nursing research](classification _regression_tree.pdf)
+   
+  *First author*: Lisa Kuhn
+   
+  This article provides an overview of classification and regression tree (CART) analysis and its applications in nursing research. It explains the key concepts and steps involved in CART methodology, including building baseline models, specifying causal models, and model trimming. The authors discuss the strengths and limitations of CART analysis and provide guidance on interpreting CART results for nursing practice.
+
+10. [The application of big data and the development of nursing science: A discussion paper](big_data.pdf)
+   
+  *First author*: Ruifang Zhu
+   
+  This paper examines the importance of big data in advancing nursing science and practice. It discusses the current state of big data research in nursing, including challenges in data sharing, standardization, and talent development. The authors propose establishing big data centers for nursing to facilitate resource sharing, unify standards, and build knowledge systems to support nursing research and practice.
+
+
+11. [How artificial intelligence is changing nursing](AI_in_Nursing.pdf)
+   
+  *First author*: Nancy Robert
+   
+  This article provides an overview of artificial intelligence (AI) and its impact on nursing practice. It discusses various AI technologies, including machine learning, deep learning, and robotics, and their applications in healthcare. The author examines how AI is changing nursing roles, the ethical considerations involved, and the future implications for the nursing profession.
+
+
+

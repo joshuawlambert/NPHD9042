@@ -1,0 +1,403 @@
+---
+title: "Introduction to Multivariate Analysis"
+author: "Dr. Joshua Lambert"
+output: revealjs::revealjs_presentation
+format:
+  revealjs:
+    toc: true
+    toc-depth: 1
+    code-fold: true
+    css: styles.css
+---
+
+# Introduction to Multivariate Analysis
+
+---
+
+## Goal
+
+- Understand the basics of multivariate analysis
+- Learn its purpose and applications
+
+---
+
+## Definition of Multivariate Analysis
+
+- Observation and analysis of more than one statistical outcome variable at a time
+- Particularly powerful in healthcare research
+
+---
+
+### Multiple Outcome Variables
+
+- Considers multiple outcome variables simultaneously
+- Captures interrelationships and interactions between variables
+
+---
+
+### Example: Drug Study
+
+- Examines blood pressure, cholesterol levels, and heart rate differences
+- Compares new drug group with placebo group
+
+---
+
+### Application in Healthcare Research
+
+- Patient and clinical outcomes are often interconnected
+- Study outcomes together for better insights
+
+---
+
+### Example: Patient Recovery
+
+- Analyzes recovery impact on lifestyle (diet, exercise)
+- Provides accurate picture compared to isolated factor study
+
+---
+
+### Comprehensive Understanding
+
+- Uncover patterns and relationships not evident in uni/bivariate analysis
+
+
+# Overview of Discriminant Analysis
+
+---
+
+## Purpose
+
+- Classify observations into predefined groups
+- Identify variables that differentiate between groups
+
+---
+
+### Example: Risk Categories
+
+- Classify patients based on clinical measurements
+
+---
+
+## Process
+
+- Collect data on multiple predictor variables
+- Define group membership for each observation
+
+---
+
+### Apply Discriminant Function
+
+- Identify combination of variables that best separate groups
+- Example: Predict patient risk using blood pressure, cholesterol, and BMI
+
+---
+
+## Applications in Healthcare
+
+- Diagnostic purposes
+- Predicting outcomes and identifying risk factors
+
+---
+
+### Example: Treatment Decisions
+
+- Determine treatment based on risk classification
+
+---
+
+## Example Discriminant Analysis
+
+- Use the <a href="Owl Diet.csv" download>Owl Diet.sav</a> dataset
+- Fictional information about types of owl diets
+
+---
+
+### JMP Instructions
+
+1. Go to Analyze > Multivariate Methods > Discriminant
+2. Select outcome measurements as Y, response, and categorical predictor as X
+3. Click OK
+
+---
+
+### R Code Example
+
+```r
+#Install Packages
+install.packages("MASS")
+install.packages("readr")
+library(readr)
+library(MASS)
+
+# Read the data file
+data <-read_csv("Owl Diet.csv")
+str(data)
+
+# Perform the Discriminant Analysis
+lda_model <- lda(species ~ skull_length + teeth_row + palatine_foramen + jaw_length, data = data)
+print(lda_model)
+summary(lda_model)
+```
+
+# Overview of MANOVA
+
+---
+
+## Purpose
+
+- Compare multivariate sample means
+- Test hypotheses about differences in multiple dependent variables across groups
+
+---
+
+### Example: Treatment Effects
+
+- Examine the effect of different treatments on health outcomes
+
+---
+
+## Process
+
+- Collect data on multiple dependent variables
+- Define independent variables or groups
+
+---
+
+### Use MANOVA
+
+- Determine if significant differences exist in multivariate means across groups
+- Example: Compare medication effectiveness on multiple symptoms
+
+---
+
+## Applications in Healthcare
+
+- Clinical trials and healthcare studies
+- Evaluate intervention effects on multiple outcomes
+
+---
+
+### Example: Lifestyle Intervention
+
+- Assess overall impact on physical and mental health outcomes
+
+---
+
+## Example MANOVA
+
+- Use the <a href="Blood Pressure.csv" download>Blood Pressure.csv</a> dataset
+- Fictional data on blood pressure medication and repeated BP measurements
+
+---
+
+### JMP Instructions
+
+1. Go to File > Open and select "Blood Pressure.csv"
+2. Go to Analyze > Fit Model
+3. Move BP measurements to "Y, Responses"
+4. Move Dose to "Construct Model Effects"
+5. Select MANOVA in "Personality" dropdown
+6. Click Run and select Compound from red triangle menu
+
+---
+
+### R Code Example
+
+```r
+# Load necessary libraries
+library(tidyverse)
+
+# Load the dataset
+data_1 <-read_csv("Blood Pressure.csv")
+
+# Perform the MANOVA
+manova_model <- manova(cbind(BP_8M, BP_12M, BP_6M, BP_8W) ~ Dose, data = data_1)
+
+# Print and summarize the results
+print(manova_model)
+summary(manova_model)
+```
+
+
+# Overview of Principal Components Analysis (PCA)
+
+---
+
+## Purpose
+
+- Reduce the number of variables in a dataset
+- Retain most of the variation
+
+---
+
+### Identify Principal Components
+
+- Explain the most variance in the data
+- Example: Simplify health indicators into principal components
+
+---
+
+## Process
+
+- Standardize the data
+- Compute covariance or correlation matrix
+- Extract eigenvalues and eigenvectors
+
+---
+
+### Example: Survey Reduction
+
+- Use PCA to reduce survey questions into key factors
+
+---
+
+## Applications in Nursing Research
+
+- Identify key factors influencing patient outcomes
+- Simplify complex datasets for analysis
+
+---
+
+### Example: Patient Recovery Study
+
+- Determine main factors contributing to recovery
+
+---
+
+## Example of PCA
+
+- Use the <a href="Body Measurements.csv" download>Body Measurements.csv</a> dataset
+- Weight and physical measurements of 22 male subjects
+
+---
+
+### JMP Instructions
+
+1. Go to Analyze > Multivariate Methods > Principal Components
+2. Select variables for analysis
+3. Click OK
+4. Select Scree Plot and Eigenvalues from red triangle menu
+
+---
+
+### R Code Example
+
+```r
+# Load Data
+your_data <- read.csv("Body Measurements.csv")
+
+# Run PCA
+pca_model <- prcomp(your_data, scale = TRUE)
+
+# Print and view results
+print(pca_model)
+summary(pca_model)
+plot(pca_model)
+
+# Scree Plot
+plot(pca_model, type = "l")
+```
+
+
+# Overview of Exploratory Factor Analysis (EFA)
+
+---
+
+## Purpose
+
+- Identify underlying structure of a set of variables
+- Identify unobserved (latent) factors
+
+---
+
+### Example: Survey Data
+
+- Explore dimensions of patient-reported outcomes in a quality of life survey
+
+---
+
+## Process
+
+- Collect data on multiple observed variables
+- Compute correlation matrix
+- Extract factors using methods like principal axis factoring or maximum likelihood
+- Rotate factors for simpler interpretation
+
+---
+
+### Example: Health Survey
+
+- Identify factors like physical health, mental health, and social functioning
+
+---
+
+## Applications in Nursing Research
+
+- Identify latent constructs
+- Understand dimensions of complex constructs like patient satisfaction
+
+---
+
+### Example: Nurse Burnout
+
+- Uncover factors contributing to nurse burnout
+
+---
+
+## Example of EFA
+
+- Use the <a href="Williams.sav" download>Williams.sav</a> dataset
+- 28-item questionnaire on organizational ability
+
+---
+
+### JMP Instructions
+
+1. Go to Analyze > Multivariate Methods > Factor Analysis
+2. Select variables and place them into the Y, columns
+3. Select variance estimation method (e.g., REML) and click OK
+4. Review factor loadings and scree plot
+
+---
+
+### R Code Example
+
+```r
+# Install and load the libraries
+install.packages("haven")
+install.packages("psych")
+library(haven)
+library(psych)
+
+# Read the file
+efa_data <- read.csv("Williams.sav")
+
+# Run the EFA
+efa_result <- fa(efa_data, nfactors = 3, rotate = "varimax")
+print(efa_result)
+fa.diagram(efa_result)
+```
+
+# Summary and Applications
+
+---
+
+## Importance of Multivariate Analysis
+
+- Comprehensive understanding of complex phenomena
+- Examine multiple outcome variables and interactions simultaneously
+
+---
+
+### Techniques and Applications
+
+- Discriminant Analysis: Classify patients into risk categories
+- MANOVA: Compare treatment effects on multiple health outcomes
+- PCA: Simplify large datasets to identify key factors
+- EFA: Explore underlying dimensions in survey data
+
+---
+
+### Example: Clinical Decision-Making
+
+- Use these techniques to inform decisions and policies

@@ -1,0 +1,169 @@
+---
+title: "Vocabulary & Jargon List"
+editor: visual
+---
+
+## Bartlett's Test of Sphericity
+A Bartlett test is used to check if there are relationships between variables before conducting factor analysis.
+
+## Bootstrapping
+A resampling technique used to estimate statistics on a population by sampling a dataset with replacement.
+
+## Canonical Correlation Analysis
+A method for exploring the relationships between two sets of variables.
+
+## CFI (Comparative Fit Index)
+A fit index that compares the fit of a target model to the fit of an independent, or null, model.
+
+## Chi-Square
+A statistical test that assesses the overall fit of a model by comparing the observed covariance matrix to the model-implied covariance matrix.
+
+## Cluster Analysis
+A technique for grouping similar objects or observations into clusters.
+
+## Communalities
+The proportion of each variable's variance that can be explained by the factors in factor analysis.
+
+## Confirmatory Factor Analysis (CFA)
+A statistical technique used to test how well measured variables represent the number of constructs.
+
+## Correlation Matrix
+A table showing correlation coefficients between variables in a dataset.
+
+## Covariance Matrix
+A square matrix showing the covariances between pairs of variables in a dataset.
+
+## Cross-Loadings
+When an indicator variable has a high loading on more than one factor.
+
+## Degrees of Freedom
+The number of values in a study that are free to vary.
+
+## Direct Effect
+The influence of one variable on another that is not mediated by any other variable in a causal model.
+
+## Discriminant Analysis
+A method used to classify a set of observations into predefined classes based on a combination of features.
+
+## Eigenvalues
+Values that represent the amount of variance explained by each factor or component in factor analysis or PCA.
+
+## Endogenous Variables
+Dependent variables in a model that are influenced by other variables within the model.
+
+## Exogenous Variables
+Independent variables in a model that are not influenced by other variables within the model.
+
+## Exploratory Factor Analysis (EFA)
+A statistical method used to uncover the underlying structure of a set of variables and identify latent (unobserved) factors.
+
+## Factor Loadings
+Correlation coefficients between variables and factors in factor analysis.
+
+## Factor Scores
+Composite variables which provide information about an individual's placement on the factor(s).
+
+## Generalized Least Squares (GLS)
+An alternative estimation method in SEM that is less sensitive to non-normality.
+
+## Goodness-of-Fit Measures
+Statistical indicators that assess how well a model fits the observed data.
+
+## Homoscedasticity
+A condition where the variability of a variable is equal across the range of values of a second variable that predicts it.
+
+## Indirect Effect
+The influence of one variable on another that is mediated by at least one other variable in a causal model.
+
+## Kaiser-Meyer-Olkin (KMO) Test
+A measure of sampling adequacy for factor analysis.
+
+## Latent Variables
+Variables that are not directly observed but are inferred from other observed variables.
+
+## MANOVA (Multivariate Analysis of Variance)
+An extension of ANOVA that allows for the comparison of multivariate sample means across groups.
+
+## Maximum Likelihood Estimation
+A common method for estimating parameters in SEM and factor analysis.
+
+## Measurement Model
+The part of an SEM that deals with the relationships between latent variables and their indicators.
+
+## Mediation
+An analysis that explores whether the effect of an independent variable on a dependent variable is transmitted through a third variable.
+
+## Model Identification
+The condition where a unique solution can be found for all of the parameters in an SEM model.
+
+## Modification Indices
+Suggested changes to an SEM model that could improve its fit.
+
+## Moderation
+An analysis that examines whether the relationship between two variables changes at different levels of a third variable.
+
+## Multicollinearity
+A condition where two or more predictor variables in a model are highly correlated, leading to unreliable estimates.
+
+## Multidimensional Scaling
+A technique for visualizing the level of similarity of individual cases in a dataset.
+
+## Multivariate Analysis
+The observation and analysis of more than one statistical outcome variable at a time.
+
+## Oblique Rotation
+A method in factor analysis that allows factors to be correlated with each other.
+
+## Observed Variables (Manifest Variables)
+Variables that are directly measured or observed in a study.
+
+## Orthogonal Rotation
+A method in factor analysis that produces uncorrelated factors.
+
+## Parsimony
+The principle of using the simplest possible statistical model that still explains the data well.
+
+## Partial Least Squares (PLS)
+A method for constructing predictive models when factors are many and highly collinear.
+
+## Path Analysis
+A statistical technique that examines direct and indirect relationships between variables using only observed variables.
+
+## Path Coefficients
+Values that represent the strength and direction of relationships between variables in a model.
+
+## Path Diagrams
+Graphical representations of the hypothesized relationships among variables in a model.
+
+## Principal Components Analysis (PCA)
+A technique used to emphasize variation and bring out strong patterns in a dataset by reducing its dimensionality.
+
+## Promax Rotation
+A type of oblique rotation that allows factors to be correlated.
+
+## RMSEA (Root Mean Square Error of Approximation)
+A fit index that measures the discrepancy between the hypothesized model and the population covariance matrix.
+
+## Scree Plot
+A graph used in factor analysis and PCA to determine the optimal number of factors or components to retain.
+
+## Structural Equation Modeling (SEM)
+A comprehensive statistical approach that models complex relationships among both observed and latent variables.
+
+## Structural Model
+The part of an SEM that specifies the relationships among latent variables.
+
+## Suppressor Variable
+A variable that increases the predictive validity of another variable when included in a regression equation.
+
+## TLI (Tucker-Lewis Index)
+A fit index similar to CFI that penalizes for model complexity.
+
+## Total Effect
+The sum of the direct and indirect effects of one variable on another in a causal model.
+
+## Varimax Rotation
+A specific type of orthogonal rotation that maximizes the variance of squared loadings for each factor.
+```
+
+The list is now in alphabetical order, making it easier to find specific terms.

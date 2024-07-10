@@ -1,0 +1,143 @@
+---
+title: "Homework 2"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Homework 2 Advanced Regression"
+    code-fold: true
+    code-tools: true
+---
+
+# Homework 1: Exploratory Factor Analysis (EFA) Assignment
+
+Over 7000 participants were surveyed during the 2015-2016 National Health and Nutrition Examination Survey (NHANES) survey collection. NHANES is a "program of studies designed to assess the health and nutritional status of adults and children in the United States. The survey is unique in that it combines interviews and physical examinations." A researcher is interested in understanding how the variables within the dataset (`HW1_NHANES_Data.csv`) explain variation in the number of physical health days that a subject reported in the last 30 days (`PhysicalHealthDaysinLast30`) using multiple linear regression. The researcher is also interested in using logistic regression to understand what variables explain variation in whether the subject reported no days or more than 1 (`PhysicalHealthDaysinLast30_2`). After exclusion criteria were considered and missing data removed, a final sample of 11377 subjects remained in the dataset. You were assigned to help this researcher explore these relationships using forward backward selection as well as multi-step (hierarchical regression).
+
+The variables included in the dataset are:
+
+| NHANES Variable              | Variable Description                                                                                                                                                                                                       | Other Info                               |
+|-------------|-----------------------------------------------|-------------|
+| SubjectID                    | Subject ID (not to be used in regression)                                                                                                                                                                                  |                                          |
+| PhysicalHealthDaysinLast30   | Number of days the subject reported having a physical health day                                                                                                                                                           | Dependent Variable (Linear Regression)   |
+| PhysicalHealthDaysinLast30_2 | 0=Subject reported zero days; 1=Subject reported \>0 physical health days                                                                                                                                                  | Dependent Variable (Logistic Regression) |
+| Race                         | White, Black, MA (Mexican American or Other Hispanic), Other                                                                                                                                                               |                                          |
+| Edu                          | LTHS=Less than High School; HS=High School; GTHS=Greater Than High School                                                                                                                                                  |                                          |
+| Ses                          | Family Income to Poverty. Less than 1 indicates that the subject's family earns less than the poverty line for the area. Greater than 1 indicates that the subject's family earns more than the poverty line for the area. |                                          |
+| BMXBMI                       | Body Mass Index                                                                                                                                                                                                            |                                          |
+| smoke                        | Non-Smoker, Current Smoker, Former Smoker                                                                                                                                                                                  |                                          |
+| Diab                         | Diabetic, Not Diabetic                                                                                                                                                                                                     |                                          |
+| LBXALC                       | 0 if below median; 1 if above median -- Alpha-carotene (ug/dL)                                                                                                                                                             | Median=2.6                               |
+| LBXBEC                       | 0 if below median; 1 if above median -- trans-b-carotene (ug/dL)                                                                                                                                                           | Median=11.8                              |
+| LBXCRY                       | 0 if below median; 1 if above median -- b-cryptoxanthin (ug/dL)                                                                                                                                                            | Median=7.9                               |
+| LBXGTC                       | 0 if below median; 1 if above median -- g-tocopherol (ug/dL)                                                                                                                                                               | Median=207                               |
+| LBXLUZ                       | 0 if below median; 1 if above median -- Lutein/zeaxanthin (ug/dL)                                                                                                                                                          | Median=14.4                              |
+| LBXLYC                       | 0 if below median; 1 if above median -- trans-lycopene (ug/dL)                                                                                                                                                             | Median=20.84                             |
+| LBXVIA                       | 0 if below median; 1 if above median -- Retinol (ug/dL)                                                                                                                                                                    | Median=56                                |
+| LBXVIE                       | 0 if below median; 1 if above median -- Vitamin E (ug/dL)                                                                                                                                                                  | Median=1129.5                            |
+
+Follow each step and provide tables, figures, and explanations when appropriate. Use the <a href="NHANES.sav" download>NHANES.sav</a> dataset and answer the following questions using a statistical software of your choice. NHANES
+
+## Data Pre-Processing
+
+1.  Begin by creating dummy variables for each character variable (for example: Edu). Make sure your reference groups make sense.
+2.  Create a demographic table stratified by whether the subject had 0 physical health days or more than 0 physical health days. All 14 independent variables and `PhysicalHealthDaysinLast30` should be included. The table should display frequency and percentage for each dummy variable and continuous variables should display the mean, median, and standard deviation. You can make two tables (one for dummy variables and one for continuous) if that is easier.
+3.  Make a histogram for each continuous variable.
+4.  Look at the tables and figures you have created. What do you notice? Are there any variables that have odd distributions?
+
+## Multiple Linear Regression
+
+1.  After completing the pre-processing step, begin by completing simple linear regression with the outcome `PhysicalHealthDaysinLast30` for each of the 14 independent variables (by the time you make your dummy variables you will have more than this). Report your findings in a table like this:
+
+### Simple Linear Regression Estimates for `PhysicalHealthDaysinLast30` Outcome
+
+| Variable      | β Estimate | P-Value | 95% CI |
+|---------------|------------|---------|--------|
+| SES (Below 1) |            |         |        |
+| BMI           |            |         |        |
+| ...           |            |         |        |
+
+2.  Interpret the results for BMI.
+
+3.  Interpret the results for SES (Below 1).
+
+4.  Complete forward selection using one of the criteria we talked about in class.
+
+    -   Describe the forward selection method and criteria you chose in 3-4 sentences.
+    -   Make a table which displays your final multivariable model like this:
+
+### Multiple Linear Regression Estimates for `PhysicalHealthDaysinLast30` Outcome: Forward Selection
+
+| Variable      | β Estimate | P-Value | 95% CI |
+|---------------|------------|---------|--------|
+| SES (Below 1) |            |         |        |
+| BMI           |            |         |        |
+| ...           |            |         |        |
+
+5.  Interpret the results for one of the variables retained by forward selection.
+
+6.  Complete backward selection using one of the criteria we talked about in class.
+
+    -   Describe the backward selection method and criteria you chose in 3-4 sentences.
+    -   Make a table which displays your final multivariable model like this:
+
+### Multiple Linear Regression Estimates for `PhysicalHealthDaysinLast30` Outcome: Backward Selection
+
+| Variable      | β Estimate | P-Value | 95% CI |
+|---------------|------------|---------|--------|
+| SES (Below 1) |            |         |        |
+| BMI           |            |         |        |
+| ...           |            |         |        |
+
+7.  Interpret the results for one of the variables retained by backward selection.
+
+8.  The researcher tells you that current literature overwhelmingly says that both diabetes and BMI affect physical health. They also tell you that there is one paper that supports smoking effects physical health. Then they say that they hypothesize that higher levels of Vitamin E and Alpha-carotene will lower the number of physical health days. Use multi-step (hierarchical regression) to test the researchers' hypotheses while respecting what the past research says.
+
+    -   Make a table which displays your final multivariable model like this:
+
+### Multiple Linear Regression Estimates for `PhysicalHealthDaysinLast30` Outcome: Multi-Step Selection
+
+| Variable                                          | β Estimate | P-Value | 95% CI |
+|--------------------------------------|------------|------------|------------|
+| **Step 1**                                        |            |         |        |
+| Diabetes                                          |            |         |        |
+| BMI                                               |            |         |        |
+| **Step 2**                                        |            |         |        |
+| Smoking (Former)                                  |            |         |        |
+| Smoking (Current)                                 |            |         |        |
+| **Step 3**                                        |            |         |        |
+| Vitamin E \> Median=1129.5 (compared to \<Median) |            |         |        |
+| ACarotene \> Median=2.6 (compared to \<Median)    |            |         |        |
+
+9.  Interpret the results for Vitamin E and Alpha-carotene.
+
+## Comparison of Methods
+
+1.  Compare and contrast the results from forward, backward, and multi-step selection strategies.
+    -   Which method did you like the most?
+    -   Which method did you trust the most?
+    -   How did the estimates compare?
+    -   What are some pitfalls to each of the three methods?
+    -   Other thoughts?
+
+## Multiple Logistic Regression
+
+1.  Using `PhysicalHealthDaysinLast30_2`, complete forward selection using one of the criteria we talked about in class.
+    -   Describe the forward selection method and criteria you chose in 3-4 sentences.
+    -   Make a table which displays your final multivariable model like this:
+
+### Multiple Logistic Regression Estimates for `PhysicalHealthDaysinLast30_2` Outcome: Forward Selection
+
+| Variable      | Exp(β) Estimate | P-Value | 95% CI |
+|---------------|-----------------|---------|--------|
+| SES (Below 1) |                 |         |        |
+| BMI           |                 |         |        |
+| ...           |                 |         |        |
+
+2.  Interpret the results for one of the variables retained by forward selection.
+
+------------------------------------------------------------------------
+
+Homework 1 NPHD 9042 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+------------------------------------------------------------------------

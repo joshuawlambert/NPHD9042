@@ -1,0 +1,67 @@
+---
+title: "Homework 3"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Homework 3"
+    code-fold: true
+    code-tools: true
+---
+
+
+This assignment uses the <a href="hsb2.csv" download>hsb2.csv</a>
+
+## Data Dictionary for hsb2.csv
+
+Two hundred observations were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics.
+
+200 observations and 11 variables:
+
+-   **Id**: unique identifier
+-   **Female**: 0=male, 1=female
+-   **Race**: 1=Hispanic, 2=Asian, 3=African-American, 4=Caucasian
+-   **SES**: 1=Low, 2=Middle, 3=High
+-   **Schtype**: 1=Public, 2=Private
+-   **Prog**: 1=General, 2=Academic, 3=Vocational
+-   **Read**: Reading Score
+-   **Write**: Writing Score
+-   **Math**: Math Score
+-   **Science**: Science Score
+-   **Socst**: Social Studies Score
+
+## Questions
+
+
+### 1. Use hsb2.csv to estimate the parameters
+
+-   **Estimate the parameters**: a1, a2, b1, b2, b3, e1, e2.
+-   **Questions**:
+    -   What do they mean?
+    -   What seems to have the strongest relationship?
+    -   What are the purposes of this path analysis?
+    -   What does it tell you?
+    -   What doesn’t it tell you?
+
+Please explain your answers.
+
+![](images/clipboard-3466844950.png)
+
+### 2. Use hsb2.csv to estimate the parameters (ignore e1-e5)
+
+-   **Estimate the parameters**: a1-a4.
+-   **Instructions**:
+    -   Use SEM (Structural Equation Modeling) to estimate the parameters.
+    -   You can use JMP or AMOS to answer this question.
+    -   The dependent variable is a latent variable **Acad** with three observed indicators: **math**, **science**, and **socst**.
+    -   There are two additional observed variables: the independent variable **female** and a mediator variable **read**.
+-   **Questions**:
+    -   What do these estimates mean?
+    -   From this model, how does **read** affect **Acad**?
+    -   Does **Acad** affect the three STEM measures?
+    -   Does **female** affect **read**?
+
+![](images/clipboard-284215649.png)
+
+------------------------------------------------------------------------
