@@ -1,5 +1,5 @@
 ---
-title: "Homework 3"
+title: "Homework 3 -- Path Analysis and SEM"
 author: "Dr. Joshua Lambert"
 output: html
 format:
@@ -34,7 +34,7 @@ Two hundred observations were randomly sampled from the High School and Beyond s
 ## Questions
 
 
-### 1. Use hsb2.csv to estimate the parameters
+### 1. Use hsb2.csv and path analysis to estimate the parameters
 
 -   **Estimate the parameters**: a1, a2, b1, b2, b3, e1, e2.
 -   **Questions**:
@@ -44,11 +44,11 @@ Two hundred observations were randomly sampled from the High School and Beyond s
     -   What does it tell you?
     -   What doesn’t it tell you?
 
-Please explain your answers.
+Please explain your answers with full sentences/paragraphs.
 
-![](images/clipboard-3466844950.png)
+![](HW3_pic1.png)
 
-### 2. Use hsb2.csv to estimate the parameters (ignore e1-e5)
+### 2. Use hsb2.csv and SEM to estimate the parameters (ignore e1-e5)
 
 -   **Estimate the parameters**: a1-a4.
 -   **Instructions**:
@@ -62,6 +62,8 @@ Please explain your answers.
     -   Does **Acad** affect the three STEM measures?
     -   Does **female** affect **read**?
 
-![](images/clipboard-284215649.png)
+Please explain your answers with full sentences/paragraphs.
+
+![](HW3_pic2.png)
 
 ------------------------------------------------------------------------

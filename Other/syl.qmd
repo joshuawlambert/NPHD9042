@@ -1,5 +1,5 @@
 ---
-title: "NPHD9040 - Syllabus"
+title: "NPHD9042 - Syllabus"
 format:
   html:
     toc: true
@@ -12,7 +12,7 @@ editor:
     wrap: 72
 ---
 
-# NPHD9040 - Applied Multivariable Analysis
+# NPHD9042 - Applied Multivariate Analysis
 
 ### Class Information
 
@@ -33,47 +33,39 @@ editor:
 
 ### Course Pre/Co-Requisites
 
-To take this course, you must: - Have taken the following courses:
-NPHD9000 and 9040 (minimum grade C/Pass)
+To take this course, you must: Be enrolled at University of Cincinnati, a graduate student, and have taken the following courses:
+NPHD9000 and 9040 (minimum grade C/Pass).
 
 ### Course Description
 
-This course is the first of two that introduce advanced statistical
-methods used in doctoral-level nursing research. Method selection,
-application, results interpretation, and presentation are stressed in a
-flipped-classroom/workshop format. Methods introduced include partial
-correlation, multi-way ANOVA, ANCOVA, multiple regression, logistic
-regression, and multilevel models. An introduction to power and sample
-size calculation by method is also covered.
+This course is the second of two which introduce advanced statistical methods in doctoral level nursing research.  Multivariate method selection, application, and results interpretation and presentation are stressed in a flipped-classroom / workshop format. Methods introduced include: MANOVA, MANCOVA, factor analysis, principle components analysis, and structural equation modeling. An introduction to power and sample size calculation by method is integrated throughout.
 
 ### Student Learning Outcomes
 
-Upon completion of the course, students will be able to: 1. Select the
-appropriate multivariate analysis method based on research objectives
-and types of variables to be analyzed. 2. Generate required sample size
-and power for prototypical analyses by multivariate method, concurrently
-addressing inclusion of under-represented groups in research. 3. Display
-an introductory level ability to manage data and conduct preliminary
-analyses to assess and address data quality and potential violations of
-statistical assumptions by multivariate method. 4. Demonstrate an
-introductory level ability to generate results, using selected
-statistical analysis software (e.g., JMP, SPSS, SAS or R), and interpret
-relevant results generated for each method.
+Upon completion of the course, students will be able to: 
+
+1.	Select the appropriate multivariate analysis method based on research objectives and types of variables to be analyzed.
+
+2.	Generate required sample size and power for prototypical analyses by multivariate method, concurrently addressing inclusion of under-represented groups in research.
+
+3.	Display an introductory level ability to manage data and conduct preliminary analyses to assess and address data quality and potential violations of statistical assumptions by multivariate method.
+
+4.	Demonstrate an introductory level ability to generate results, using selected statistical analysis software (e.g., SPSS, JMP, SAS or R), and interpret relevant results generated for each method. Pre- & Co-requisites 
+
 
 ### Teaching Strategies
 
--   Weekly Lectures
+-   Weekly Lectures (asynchronous videos)
 -   Academic Methodology Journal Articles
--   Statistical Software Workshops
--   Quizzes
--   Group Project Proposals
--   Group Presentations
--   Group Papers
--   Class Peer Review
+-   Statistical Software Workshops (synchronous online or in-person)
+-   Homework (submitted on Canvas)
+-   Group Project Proposals (submitted on Canvas)
+-   Group Presentations (submitted on Canvas)
+-   Group Papers (submitted on Canvas)
 
 Active learning strategies will be used throughout the semester.
 Examples include faculty and student-led discussions, short paper
-reviews, creating professional academic documents, and presentations.
+reviews, creating professional academic proposals, documents, and presentations.
 
 The textbook readings and additional resources posted in the modules
 provide background information so you can explore, learn about, discuss,
@@ -86,9 +78,8 @@ others.
 
 ### Course Activities
 
-Course activities will be conducted within the Canvas course management
-system. All communication should take place through Canvas, email
-([joshua.lambert\@uc.edu](mailto:joshua.lambert@uc.edu)), or the Teams
+Course activities will be conducted within this course wewbsite and the Canvas course management
+system [link](https://uc.instructure.com/). All communication should take place through Canvas, email ([joshua.lambert\@uc.edu](mailto:joshua.lambert@uc.edu)), or the Teams
 page.
 
 ### Course Format
@@ -105,22 +96,22 @@ page.
 -   You must check your UC email account regularly, as faculty will use
     this for communication.
 
-### Course Materials
+### Course Assignments
+
+Course assignments (HW, and group based assignments) will be submitted through canvas. They will be available to submit two weeks prior to their due date. Assignments will be due at 11:59pm on their due date.
 
 #### Resources
 
 The main portion of the course content will be through Dr. Lambert's
-weekly lecture notes on Canvas. The books listed below are recommended
-if your preferred learning modality is reading. Lectures will be
-recorded and posted on Canvas for review.
+course website and canvas. The books listed below are recommended
+but not required. Lectures will be posted on the course website [https://joshuawlambert.github.io/NPHD9042/](https://joshuawlambert.github.io/NPHD9042/).
 
 #### Books (Optional)
 
 -   **Discovering Statistics Using IBM SPSS Statistics**
     -   4th Edition (Paper) approximately \$35 on Amazon
     -   5th Edition (Paper) approximately \$65 on Amazon
--   **Nursing Research: Generating and Assessing Evidence for Nursing
-    Practice**
+-   **Nursing Research: Generating and Assessing Evidence for Nursing Practice**
     -   Tenth, North American Edition (Paper) approximately \$60 on
         Amazon
 
@@ -137,6 +128,7 @@ Contact Dr. Lambert if additional resources are needed.
 -   Microsoft Office (Word, Excel, Teams)
 -   JMP (Free to UC College of Nursing students)
     -   See Canvas page for download and installation instructions
+-   Other statistical Software
 -   Internet access
 
 ### Classroom Procedures/Policies
@@ -171,7 +163,7 @@ course activities and completing assignments.
 -   [Religious Observances
     Statement](http://www.uc.edu/registrar/policies_and_procedures/religious_observances_statement.html)
 
-If you will be absent, email Dr. Lambert ahead of time.
+**If you will be absent, email Dr. Lambert ahead of time.**
 
 #### Late Work Policy
 
@@ -198,10 +190,17 @@ revised due to circumstances, and changes will be communicated promptly.
 ### Grading Policy
 
 The following scale will be used for grading all course graded
-activities and deriving the final course grade: - A+: 97-100% - A:
-93-96.99% - A-: 90-92.99% - B+: 87-89.99% - B: 83-86.99% - B-:
-80-82.99% - C+: 77-79.99% - C: 73-76.99% - C-: 70-72.99% - D+:
-67-69.99% - D: 63-66.99% - D-: 60-62.99% - F: Below 60%
-
-**Additional Notes:** - Dr. Lambert may provide additional grading notes
-during the course.
+activities and deriving the final course grade: 
+- A+: 97-100% 
+- A: 93-96.99% 
+- A-: 90-92.99% 
+- B+: 87-89.99% 
+- B: 83-86.99% 
+- B-: 80-82.99% 
+- C+: 77-79.99% 
+- C: 73-76.99% 
+- C-: 70-72.99% 
+- D+: 67-69.99% 
+- D: 63-66.99% 
+- D-: 60-62.99% 
+- F: Below 60%

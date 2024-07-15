@@ -1,0 +1,90 @@
+---
+title: "Final Project: SEM"
+author: "Dr. Joshua Lambert"
+output: html
+format:
+  html:
+    toc: true
+    toc-title: "Final Project"
+    code-fold: true
+    code-tools: true
+---
+
+# Intro
+
+Please review the lecture [lecture related to the topic](/Lectures/introduction-to-SEM.qmd) and the [writing guide](/Lectures/writing.qmd#structural-equation-modeling-sem). The writing guide is not exhaustive, rather a simple example. Please expand thoroughly during all three phases of your project.
+
+# Final Project Details and Guidelines
+This academic project is a team effort involving a group of students, ideally with three members, unless specified otherwise by Dr. Lambert.
+
+The main goal of the Final Project is to assess your understanding of Structural Equation Modeling (SEM). The project has three parts: a project proposal, a presentation, and a comprehensive paper, following the standard structure used in academic research, including Title page, Abstract, Introduction, Methods, Results, Discussion, and References.
+
+The project proposal should be concise, focusing on the key ideas and excluding Results and Discussion. It lays the groundwork for the subsequent presentation. The presentation builds on the proposal by adding the omitted Results and Discussion sections, along with References. Feedback received during the presentation should be taken into account when finalizing the project paper.
+
+The project paper is the most substantial part, requiring at least five pages. It involves a thorough exploration of the subject, with in-depth discussions tailored to the reviewer's interests.
+
+These components together simulate the academic research process, allowing participants to comprehensively utilize SEM through collaboration and scholarly investigation.
+
+For the project, choose one dataset from the three provided below. Remember SEM consists of six steps:
+
+1. Choose Dataset (from list below).
+2. Model Specification: develop a theoretical model based on your groups research question or hypothesis.
+3. Model Estimation: use JMP or other software to estimate the parameters of the model that best fit the data.
+4. Model Fit Evaluation: Comparative Fit Index (CFI), Root Mean Square Error of Approximation (RMSEA).
+5. Model Modification: modify the model by adding or removing paths, allowing latent variables to correlate, or including additional observed variables.
+6. Interpretation and Inference: Once your model is checked in step 5, interpret the estimated path coefficients to understand the relationships between variables and draw conclusions based on the findings.
+
+## Project Datasets
+1. [Thomsen2.sav](Thomsen2.sav)
+2. [JobSatisfaction2.jmp](JobSatisfaction2.jmp)
+3. [OnlineConsumerData2.jmp](OnlineConsumerData2.jmp)
+
+For more information about these datasets please see [this document]().
+
+
+## Project Proposal
+- **Length**: 1-2 pages.
+- **Content**:
+  - **Introduction**: Briefly introduce the topic and the relevance of the dataset you chose.
+  - **Goals and Hypotheses**: Clearly state the goals and hypotheses of your project.
+  - **Statistical Analysis Plan (SAP)**: Outline the course of action for data collection, data analysis, the type of statistical software used, and plans for results and interpretations. Refer to the [provided paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9726973/) for more details on what to include in your SAP.
+  - **Meeting**: Schedule a meeting with Dr. Lambert at least two weeks prior to the project presentation to discuss your proposal.
+
+## Project Presentation
+- **Length**: 20 minutes (10-15 PowerPoint slides).
+- **Content**:
+  - **Structure**: One slide for each section from your paper (hypothesis, dataset description, statistical methods, results, and conclusions). Distribute these slides evenly throughout the presentation, adding detailed explanations in between.
+  - **Creativity**: Use original and engaging methods to present your results. Utilize external resources and materials to enhance your presentation.
+  - **Q&A**: Reserve 5-10 minutes for questions.
+  - **Peer Review**: Classmates will critique each presentation based on a scoring rubric. These reviews will be averaged for the peer review grade.
+
+## Project Paper
+- **Length**: Atleast 5 pages.
+- **Content**:
+  - **Introduction**: Provide a comprehensive introduction to the topic and explain why this research is necessary and interesting.
+  - **Data Description**: Present the dataset and give a short description of the variables.
+  - **Statistical Methods**: Justify the chosen statistical methods and explain how they will be applied.
+  - **Results**: Present the findings from the analysis. Report statistical results as effect (95% CI; p-value).
+  - **Discussion and Conclusion**: Summarize the findings, discuss implications, and suggest future research directions. Address possible pitfalls in the study.
+  - **References**: Include a comprehensive list of references used in your research.
+
+## Grading Criteria
+- **Proposal**:
+  - Introduction to the Topic: 20%.
+  - Statistical Analysis Plan: 40%.
+  - Goals: 20%.
+  - Meeting with Dr. Lambert: 20%.
+- **Presentation**:
+  - Creativity: 40%.
+  - Paper Components: 40%.
+  - Questions: 20%.
+- **Paper**:
+  - Introduction: 10%
+  - Data Description: 10%
+  - Statistical Methods: 25%
+  - Results: 25%
+  - Discussion and Conclusion: 25%
+  - References: 5%
+
+## Additional Details and Questions
+If you need any additional details or have questions please email me at [joshua.lambert@uc.edu](mailto:joshua.lambert@uc.edu).
