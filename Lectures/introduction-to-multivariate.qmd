@@ -11,6 +11,8 @@ format:
     css: styles.css
 ---
 
+{{< video https://youtu.be/YNAibcsWDEA >}}
+
 # Introduction to Multivariate Analysis
 
 ## Goal: Understand the basics of multivariate analysis, including its purpose and applications
