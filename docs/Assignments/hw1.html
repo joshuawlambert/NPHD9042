@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
-  <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix">1. Correlation Matrix</a></li>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries">1. Preliminaries</a></li>
   <li><a href="#maximum-likelihood-and-varimax-rotation" id="toc-maximum-likelihood-and-varimax-rotation" class="nav-link" data-scroll-target="#maximum-likelihood-and-varimax-rotation">2. Maximum Likelihood and Varimax Rotation</a></li>
   <li><a href="#principal-axis-factoring-and-varimax-rotation" id="toc-principal-axis-factoring-and-varimax-rotation" class="nav-link" data-scroll-target="#principal-axis-factoring-and-varimax-rotation">3. Principal Axis Factoring and Varimax Rotation</a></li>
   <li><a href="#principal-axis-factoring-and-quartimin-rotation" id="toc-principal-axis-factoring-and-quartimin-rotation" class="nav-link" data-scroll-target="#principal-axis-factoring-and-quartimin-rotation">4. Principal Axis Factoring and Quartimin Rotation</a></li>
@@ -260,13 +260,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="exploratory-factor-analysis-efa-assignment" class="level1">
 <h1>Exploratory Factor Analysis (EFA) Assignment</h1>
-<p>This assignment uses the <a href="Williams.sav" download="">Williams.sav</a></p>
-<p>Use the Williams.sav dataset to complete an exploratory factor analysis. A description of the data and the questions and the dataset can be found on Canvas. Answer the following questions using a statistical software of your choice.</p>
+<p>This assignment uses the <a href="SAQ.csv" download="">SAQ.csv</a></p>
+<p>Using the provided dataset SAQ.csv, conduct a comprehensive Exploratory Factor Analysis (EFA). The dataset contains responses from 23 questions developed based on interviews with anxious and non-anxious students. Each question is a statement, and the responses were collected using a five-point Likert scale ranging from ‘strongly disagree’ to ‘strongly agree.’ The purpose of this tool was to understand how SPSS anxiety could be measured.</p>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<section id="correlation-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-matrix">1. Correlation Matrix</h3>
-<p>Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.</p>
+<section id="preliminaries" class="level3">
+<h3 class="anchored" data-anchor-id="preliminaries">1. Preliminaries</h3>
+<p>Check the distribution of the questions for floor and ceiling effects. Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.</p>
 </section>
 <section id="maximum-likelihood-and-varimax-rotation" class="level3">
 <h3 class="anchored" data-anchor-id="maximum-likelihood-and-varimax-rotation">2. Maximum Likelihood and Varimax Rotation</h3>
@@ -611,15 +611,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploratory Factor Analysis (EFA) Assignment</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>This assignment uses the <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"Williams.sav"</span> <span class="er">download</span><span class="kw">&gt;</span>Williams.sav<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>This assignment uses the <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"SAQ.csv"</span> <span class="er">download</span><span class="kw">&gt;</span>SAQ.csv<span class="kw">&lt;/a&gt;</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Use the Williams.sav dataset to complete an exploratory factor analysis. A description of the data and the questions and the dataset can be found on Canvas. Answer the following questions using a statistical software of your choice.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Using the provided dataset SAQ.csv, conduct a comprehensive Exploratory Factor Analysis (EFA). The dataset contains responses from 23 questions developed based on interviews with anxious and non-anxious students. Each question is a statement, and the responses were collected using a five-point Likert scale ranging from 'strongly disagree' to 'strongly agree.' The purpose of this tool was to understand how SPSS anxiety could be measured.</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Correlation Matrix</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Preliminaries</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Check the distribution of the questions for floor and ceiling effects. Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Maximum Likelihood and Varimax Rotation</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>

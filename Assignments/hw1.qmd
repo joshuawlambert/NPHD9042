@@ -12,15 +12,15 @@ format:
 
 # Exploratory Factor Analysis (EFA) Assignment
 
-This assignment uses the <a href="Williams.sav" download>Williams.sav</a>
+This assignment uses the <a href="SAQ.csv" download>SAQ.csv</a>
 
-Use the Williams.sav dataset to complete an exploratory factor analysis. A description of the data and the questions and the dataset can be found on Canvas. Answer the following questions using a statistical software of your choice.
+Using the provided dataset SAQ.csv, conduct a comprehensive Exploratory Factor Analysis (EFA). The dataset contains responses from 23 questions developed based on interviews with anxious and non-anxious students. Each question is a statement, and the responses were collected using a five-point Likert scale ranging from 'strongly disagree' to 'strongly agree.' The purpose of this tool was to understand how SPSS anxiety could be measured.
 
 ## Questions
 
-### 1. Correlation Matrix
+### 1. Preliminaries
 
-Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.
+Check the distribution of the questions for floor and ceiling effects. Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.
 
 ### 2. Maximum Likelihood and Varimax Rotation
 
