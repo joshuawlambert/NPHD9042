@@ -13,6 +13,7 @@ format:
 
 {{< video https://youtu.be/_quJr7yC29M >}}
 
+{{< video https://youtu.be/1xkkOJ210OU >}}
 
 # Introduction to Exploratory Factor Analysis (EFA)
 
