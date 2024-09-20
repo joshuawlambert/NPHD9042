@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Structural Equation Modeling (SEM)"
-author: "Dr. Joshua Lambert"
+author: "Dr. Paul Norrod and Dr. Joshua Lambert"
 output: html
 format:
   html:
@@ -15,14 +15,20 @@ format:
 
 ![](images/sem1.png)
 
-Structural Equation Modeling (SEM) is a comprehensive statistical approach used to model complex relationships among variables. This page will cover the fundamentals of SEM, including how to build, analyze, and interpret SEM models accurately.
+Structural Equation Modeling (SEM) is a comprehensive statistical approach used to model complex relationships among variables. In other words, SEM integrates various techniques into a singular model structure. On this page, we will cover the fundamentals of SEM, including how to build, analyze, and interpret SEM models accurately.
 
 ## Definition and Purpose of SEM
 
--   **Definition**: SEM is a statistical technique that allows for the analysis of complex relationships between observed and latent variables.
--   **Purpose**: To test theoretical models that specify relationships among multiple variables, including both direct and indirect effects.
+-   **Definition**: SEM is a multivariate statistical technique for analyzing complex relationships between observed and latent variables.
+-   **Integrative of Various Disciplines**: Psychology, epidemiology, statistics, and econometrics. Our fields' theoretical, qualitative, quantitative, and clinical foci make SEM application to nursing science broad. 
+-   **Purpose**: To test theoretical models that specify relationships among multiple variables, including direct and indirect effects. Employs multivariate techniques to fit a modeling framework.   
 
-## Key Concepts and Theoretical Foundations
+## Research Application, Key Concepts, and Theoretical Foundations
+
+-   **Types of Research Applications for SEM**: 
+    - **Assessing Complex and Multi-factorial Relationships**: Research with difficulty measuring relationships, including errors that may need correction. An example might include clinical support. Support is difficult to measure and can include variations in how support is defined and measured, thus producing error. 
+    - **Evaluating Systems of Relationships**: Rather than the association of X on Y, such as the association of HTN with CVD, we can use SEM to look at multiple variables as potential outcomes and predictors. An example might include Age, BMI, and county of residence on HTN and CVD. We can also look at how HTN and CVD impact BMI, etc. There are multiple systemic possibilities for using SEM to explore the relationships. 
+    - **Identifying Factor Mediation**: How does a third factor, Z, mediate the association between X and Y? An example here might include how factor Z (e.g., job resources) mediates the relationship between X (e.g., job demands) and Y (e.g., educator depression). 
 
 -   **Key Concepts**:
     -   **Observed Variables**: Variables that are measured directly.
