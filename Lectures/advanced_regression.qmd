@@ -13,6 +13,8 @@ format:
 
 {{< video https://youtu.be/QpMHKd6vlm0 >}}
 
+{{< video https://youtu.be/oSSbnchCcpE >}}
+
 # Model Building and Advanced Linear and Logistic Regression
 
 Understanding the fundamentals and advanced topics of multiple linear and logistic regression analysis is crucial for nursing research. This page will cover the definitions, key concepts, assumptions, and techniques required to build robust models in these contexts.

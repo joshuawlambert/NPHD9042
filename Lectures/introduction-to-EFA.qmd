@@ -15,6 +15,10 @@ format:
 
 {{< video https://youtu.be/1xkkOJ210OU >}}
 
+{{< video https://youtu.be/GnvdsoEIS8Q >}}
+
+[Dr. Habing's EFA notes](530efa.pdf)
+
 # Introduction to Exploratory Factor Analysis (EFA)
 
 Exploratory Factor Analysis (EFA) is a statistical technique used to uncover the underlying structure of a relatively large set of variables. It is often used in research to identify latent variables that cannot be measured directly.
