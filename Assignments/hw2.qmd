@@ -34,7 +34,7 @@ The variables included in the dataset are:
 | LBXVIA                       | 0 if below median; 1 if above median -- Retinol (ug/dL)                                                                                                                                                                    | Median=56                                |
 | LBXVIE                       | 0 if below median; 1 if above median -- Vitamin E (ug/dL)                                                                                                                                                                  | Median=1129.5                            |
 
-Follow each step and provide tables, figures, and explanations when appropriate. Use the <a href="NHANES DATASET DOWNLOAD" download>HW2.csv</a> dataset and answer the following questions using a statistical software of your choice. NHANES
+Follow each step and provide tables, figures, and explanations when appropriate. <a href="HW2.csv" download>HW2.csv</a> dataset and answer the following questions using a statistical software of your choice. NHANES
 
 ## Data Pre-Processing
 
