@@ -11,7 +11,7 @@ format:
     css: styles.css
 ---
 
-<div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://mailuc-my.sharepoint.com/personal/norrodpl_ucmail_uc_edu/_layouts/15/embed.aspx?UniqueId=055683f1-b74c-4367-a976-058620a9200d&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="NPHD9042_SEM_Fall_2024.mp4" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
+{{< video https://youtu.be/4i9OFdNtSdI >}}
 
 # Introduction to Structural Equation Modeling (SEM)
 
