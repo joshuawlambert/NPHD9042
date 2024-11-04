@@ -39,7 +39,7 @@ For the project, choose one dataset from the three provided below. Remember SEM 
 2. [JobSatisfaction2.jmp](JobSatisfaction2.jmp)
 3. [OnlineConsumerData2.jmp](OnlineConsumerData2.jmp)
 
-For more information about these datasets please see [this document]().
+For more information about these datasets please see [this document](FinalProject_DataDescription2.docx).
 
 
 ## Project Proposal
