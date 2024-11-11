@@ -14,6 +14,8 @@ editor:
     wrap: sentence
 ---
 
+{{< video https://youtu.be/Yb6Pyv_7DHs >}}
+
 ### Introduction to CART Modeling
 
 ## Understanding the Basics of CART and Its Application in Research
