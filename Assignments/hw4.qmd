@@ -12,16 +12,15 @@ format:
 
 ## Homework 4
 
-In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean. You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 75% of the data for training and 25% for testing (or validation). Use the <a href="hsb2.csv" download>hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in SPSS or JMP to create your tree.
+In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <a href="hsb2.csv" download>hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in JMP (or another statistical software) to create your tree.
 
 With your final tree created, please answer the following questions:
 
-1.  **What criteria did you use for creating your tree?**
-2.  **Paste a picture of your tree built from the training data.**
-3.  **How many splits does the tree have?**
-4.  **Do the splits make sense? Do any of them not make sense?**
-5.  **What is the classification accuracy in the training data of your tree?**
-6.  **What is the classification accuracy in the testing data of your tree?**
-7.  **How does the training and testing classification compare? What does that tell you about your tree?**
-8.  **Do you trust the tree? Would you feel confident in its ability to predict? Would you trust it with your own prediction?**
-9.  **How might this work in the medical field? What are the upsides? Downsides?**
+1.  **Paste a picture of your tree built from the training data.**
+2.  **How many splits does the tree have?**
+3.  **Do the splits make sense? Do any of them not make sense?**
+4.  **What is the misclassification accuracy in the training data of your tree?**
+5.  **What is the misclassification accuracy in the testing data of your tree?**
+6.  **How does the training and testing classification compare? What does that tell you about your tree?**
+7.  **Do you trust the tree? Would you feel confident in its ability to predict? Would you trust it with your own prediction?**
+8.  **What is the process for making predictions for new observations? What are the upsides? Downsides? Think through the entire process, and give your thoughts here.**

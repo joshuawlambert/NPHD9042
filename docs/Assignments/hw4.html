@@ -250,18 +250,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="homework-4" class="level2">
 <h2 class="anchored" data-anchor-id="homework-4">Homework 4</h2>
-<p>In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean. You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 75% of the data for training and 25% for testing (or validation). Use the <a href="hsb2.csv" download="">hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in SPSS or JMP to create your tree.</p>
+<p>In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <a href="hsb2.csv" download="">hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in JMP (or another statistical software) to create your tree.</p>
 <p>With your final tree created, please answer the following questions:</p>
 <ol type="1">
-<li><strong>What criteria did you use for creating your tree?</strong></li>
 <li><strong>Paste a picture of your tree built from the training data.</strong></li>
 <li><strong>How many splits does the tree have?</strong></li>
 <li><strong>Do the splits make sense? Do any of them not make sense?</strong></li>
-<li><strong>What is the classification accuracy in the training data of your tree?</strong></li>
-<li><strong>What is the classification accuracy in the testing data of your tree?</strong></li>
+<li><strong>What is the misclassification accuracy in the training data of your tree?</strong></li>
+<li><strong>What is the misclassification accuracy in the testing data of your tree?</strong></li>
 <li><strong>How does the training and testing classification compare? What does that tell you about your tree?</strong></li>
 <li><strong>Do you trust the tree? Would you feel confident in its ability to predict? Would you trust it with your own prediction?</strong></li>
-<li><strong>How might this work in the medical field? What are the upsides? Downsides?</strong></li>
+<li><strong>What is the process for making predictions for new observations? What are the upsides? Downsides? Think through the entire process, and give your thoughts here.</strong></li>
 </ol>
 
 
@@ -568,19 +567,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Homework 4</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean. You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 75% of the data for training and 25% for testing (or validation). Use the <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"hsb2.csv"</span> <span class="er">download</span><span class="kw">&gt;</span>hsb2.csv<span class="kw">&lt;/a&gt;</span> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in SPSS or JMP to create your tree.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"hsb2.csv"</span> <span class="er">download</span><span class="kw">&gt;</span>hsb2.csv<span class="kw">&lt;/a&gt;</span> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in JMP (or another statistical software) to create your tree.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>With your final tree created, please answer the following questions:</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**What criteria did you use for creating your tree?**</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Paste a picture of your tree built from the training data.**</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**How many splits does the tree have?**</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Do the splits make sense? Do any of them not make sense?**</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**What is the classification accuracy in the training data of your tree?**</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**What is the classification accuracy in the testing data of your tree?**</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>**How does the training and testing classification compare? What does that tell you about your tree?**</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>**Do you trust the tree? Would you feel confident in its ability to predict? Would you trust it with your own prediction?**</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>**How might this work in the medical field? What are the upsides? Downsides?**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Paste a picture of your tree built from the training data.**</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**How many splits does the tree have?**</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Do the splits make sense? Do any of them not make sense?**</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**What is the misclassification accuracy in the training data of your tree?**</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**What is the misclassification accuracy in the testing data of your tree?**</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**How does the training and testing classification compare? What does that tell you about your tree?**</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>**Do you trust the tree? Would you feel confident in its ability to predict? Would you trust it with your own prediction?**</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>**What is the process for making predictions for new observations? What are the upsides? Downsides? Think through the entire process, and give your thoughts here.**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
