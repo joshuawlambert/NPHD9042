@@ -22,30 +22,30 @@ Using the provided dataset SAQ.csv, conduct a comprehensive Exploratory Factor A
 
 Check the distribution of the questions for floor and ceiling effects. Construct a correlation matrix of the survey items. Put that here and discuss observations that you have.
 
-### 2. Maximum Likelihood and Varimax Rotation
+### 2. Use the Maximum Likelihood method and Varimax Rotation to complete an EFA and answer the following questions:
 
 -   What is the conclusion of Bartlett's Test for Sphericity?
--   What does the varimax method assume?
+-   What does the varimax rotation assume?
 -   How many factors have eigenvalues \> 1?
 -   Extract that many factors. What are the rotated factor loadings? Put the table here.
--   What percent of variance do these factors cumulatively explain?
+-   What percent of variance do these factors cumulatively (in total) explain?
 -   How would you interpret these factors? What labels would you give them?
 
-### 3. Principal Axis Factoring and Varimax Rotation
+### 3. Use the Principal Axis Factoring method and Varimax Rotation to complete an EFA and answer the following questions:
 
 -   Why do we not do Bartlett's Test for PAF?
--   What does the varimax method assume?
+-   What does the varimax rotation assume?
 -   How many factors have eigenvalues \> 1?
 -   Extract that many factors. What are the rotated factor loadings? Put the table here.
--   What percent of variance do these factors cumulatively explain?
+-   What percent of variance do these factors cumulatively (in total) explain?
 -   How would you interpret these factors? What labels would you give them?
 
-### 4. Principal Axis Factoring and Quartimin Rotation
+### 4. Use the Principal Axis Factoring method and Quartimin Rotation to complete an EFA and answer the following questions:
 
--   What does the varimax method assume?
+-   What does the quartimin rotation assume?
 -   How many factors have eigenvalues \> 1?
 -   Extract that many factors. What are the rotated factor loadings? Put the table here.
--   What percent of variance do these factors cumulatively explain?
+-   What percent of variance do these factors cumulatively (in total) explain?
 -   How would you interpret these factors? What labels would you give them?
 
 ### 5. Comparison of Analyses
