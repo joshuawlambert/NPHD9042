@@ -33,6 +33,41 @@ For general public edification the data collected through the personality tests 
 
 You can find a table of raw data [here](https://openpsychometrics.org/_rawdata/).
 
+## R Starter Code
+
+After choosing and downloading a dataset, save it as a CSV file and update `your_dataset.csv` below.
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+load_packages(c("psych", "GPArotation"))
+
+project_data <- read.csv("your_dataset.csv")
+
+# Keep the numeric item columns that belong in the EFA.
+# Edit this object after reviewing your dataset codebook.
+efa_items <- project_data[sapply(project_data, is.numeric)]
+efa_items <- na.omit(efa_items)
+
+cor_matrix <- cor(efa_items, use = "pairwise.complete.obs")
+psych::cortest.bartlett(cor_matrix, n = nrow(efa_items))
+
+eigen_values <- eigen(cor_matrix)$values
+n_factors <- sum(eigen_values > 1)
+n_factors
+
+efa_fit <- psych::fa(efa_items, nfactors = n_factors, fm = "pa", rotate = "oblimin")
+print(efa_fit)
+print(efa_fit$loadings, cutoff = 0.30)
+psych::fa.diagram(efa_fit)
+```
+
 ## Project Proposal
 - **Length**: 1-2 pages.
 - **Content**:

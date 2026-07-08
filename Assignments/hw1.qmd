@@ -16,6 +16,68 @@ This assignment uses the <a href="SAQ.csv" download>SAQ.csv</a>
 
 Using the provided dataset SAQ.csv, conduct a comprehensive Exploratory Factor Analysis (EFA). The dataset contains responses from 23 questions developed based on interviews with anxious and non-anxious students. Each question is a statement, and the responses were collected using a five-point Likert scale ranging from 'strongly disagree' to 'strongly agree.' The purpose of this tool was to understand how SPSS anxiety could be measured.
 
+## R Starter Code
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+assignment_data <- function(filename) {
+  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
+  hit <- candidates[file.exists(candidates)]
+  if (length(hit) == 0) stop("Could not find ", filename)
+  normalizePath(hit[1], winslash = "/")
+}
+
+load_packages(c("readr", "psych", "GPArotation"))
+
+saq_raw <- readr::read_csv(assignment_data("SAQ.csv"))
+
+recode_likert <- function(x) {
+  x <- trimws(as.character(x))
+  x[x == "Strongly Disagree"] <- "Strongly disagree"
+  as.numeric(factor(
+    x,
+    levels = c("Strongly disagree", "Disagree", "Neither", "Agree", "Strongly agree"),
+    ordered = TRUE
+  ))
+}
+
+saq <- as.data.frame(lapply(saq_raw, recode_likert))
+
+# Preliminaries
+summary(saq)
+cor_matrix <- cor(saq, use = "pairwise.complete.obs")
+round(cor_matrix, 2)
+psych::cortest.bartlett(cor_matrix, n = nrow(saq))
+
+# Number of factors by eigenvalue > 1
+eigen_values <- eigen(cor_matrix)$values
+eigen_values
+n_factors <- sum(eigen_values > 1)
+n_factors
+
+# Maximum likelihood with varimax rotation
+efa_ml_varimax <- psych::fa(saq, nfactors = n_factors, fm = "ml", rotate = "varimax")
+print(efa_ml_varimax)
+print(efa_ml_varimax$loadings, cutoff = 0.30)
+
+# Principal axis factoring with varimax rotation
+efa_pa_varimax <- psych::fa(saq, nfactors = n_factors, fm = "pa", rotate = "varimax")
+print(efa_pa_varimax)
+print(efa_pa_varimax$loadings, cutoff = 0.30)
+
+# Principal axis factoring with quartimin rotation
+efa_pa_quartimin <- psych::fa(saq, nfactors = n_factors, fm = "pa", rotate = "quartimin")
+print(efa_pa_quartimin)
+print(efa_pa_quartimin$loadings, cutoff = 0.30)
+```
+
 ## Questions
 
 ### 1. Preliminaries

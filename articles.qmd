@@ -15,7 +15,7 @@ editor: source
 -   [Understanding poisson regression. ](Articles/poisson_regression.pdf)
 -   [Zero-inflated Poisson modeling of fall risk factors in community-dwelling older adults.](Articles/Zero_inflated_poisson.pdf)
 -   [Testing and verifying nursing theory by confirmatory factor analysis](Articles/Testing_nursing_theory_by_CFA.pdf)
--   [The process and utility of classification and regression tree methodology in nursing research.](Articles/classification_regression_tree.pdf)
+-   [The process and utility of classification and regression tree methodology in nursing research.](Articles/classification _regression_tree.pdf)
 -   [Interpreting evidence from structural equation modeling in nursing practice.](Articles/SEM_paper1.pdf)
 -   [How artificial intelligence is changing nursing](Articles/AI_in_Nursing.pdf)
 -   [A systematic review of structural equation modelling in nursing research](Articles/SEM_paper2.pdf)

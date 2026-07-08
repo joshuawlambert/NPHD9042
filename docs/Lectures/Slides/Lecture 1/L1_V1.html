@@ -326,7 +326,7 @@ Dr.&nbsp;Joshua Lambert
 <section id="example-discriminant-analysis" class="slide level2">
 <h2>Example Discriminant Analysis</h2>
 <ul>
-<li>Use the <a href="Owl Diet.csv" download="">Owl Diet.csv</a> dataset</li>
+<li>Use the <a href="../../Owl Diet.csv" download="">Owl Diet.csv</a> dataset</li>
 <li>Fictional information about types of owl diets</li>
 </ul>
 </section>
@@ -342,20 +342,19 @@ Dr.&nbsp;Joshua Lambert
 <section class="slide level2">
 
 <h3 id="r-code-example">R Code Example</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#Install Packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">install.packages</span>(<span class="st">"MASS"</span>)</span>
-<span id="cb1-3"><a></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(MASS)</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># Read the data file</span></span>
-<span id="cb1-8"><a></a>data <span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"Owl Diet.csv"</span>)</span>
-<span id="cb1-9"><a></a><span class="fu">str</span>(data)</span>
-<span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a><span class="co"># Perform the Discriminant Analysis</span></span>
-<span id="cb1-12"><a></a>lda_model <span class="ot">&lt;-</span> <span class="fu">lda</span>(<span class="st">`</span><span class="at">species</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">skull length</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">teeth row</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">palatine foramen</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">jaw length</span><span class="st">`</span>, <span class="at">data =</span> data)</span>
-<span id="cb1-13"><a></a><span class="fu">print</span>(lda_model)</span>
-<span id="cb1-14"><a></a><span class="fu">summary</span>(lda_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Install packages if needed</span></span>
+<span id="cb1-2"><a></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"MASS"</span>, <span class="st">"readr"</span>), <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co"># Read the data file</span></span>
+<span id="cb1-7"><a></a>data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../../Owl Diet.csv"</span>)</span>
+<span id="cb1-8"><a></a><span class="fu">str</span>(data)</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># Perform the Discriminant Analysis</span></span>
+<span id="cb1-11"><a></a>lda_model <span class="ot">&lt;-</span> <span class="fu">lda</span>(<span class="st">`</span><span class="at">species</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">skull length</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">teeth row</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">palatine foramen</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">jaw length</span><span class="st">`</span>, <span class="at">data =</span> data)</span>
+<span id="cb1-12"><a></a><span class="fu">print</span>(lda_model)</span>
+<span id="cb1-13"><a></a><span class="fu">summary</span>(lda_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="overview-of-manova" class="title-slide slide level1 center">
@@ -408,7 +407,7 @@ Dr.&nbsp;Joshua Lambert
 <section id="example-manova" class="slide level2">
 <h2>Example MANOVA</h2>
 <ul>
-<li>Use the <a href="Blood Pressure.csv" download="">Blood Pressure.csv</a> dataset</li>
+<li>Use the <a href="../../Blood Pressure.csv" download="">Blood Pressure.csv</a> dataset</li>
 <li>Fictional data on blood pressure medication and repeated BP measurements</li>
 </ul>
 </section>
@@ -424,18 +423,17 @@ Dr.&nbsp;Joshua Lambert
 <section class="slide level2">
 
 <h3 id="r-code-example-1">R Code Example</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Load the dataset</span></span>
-<span id="cb2-5"><a></a>data_1 <span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"Blood Pressure.csv"</span>)</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a><span class="co"># Perform the MANOVA</span></span>
-<span id="cb2-8"><a></a>manova_model <span class="ot">&lt;-</span> <span class="fu">manova</span>(<span class="fu">cbind</span>(<span class="st">`</span><span class="at">BP 8M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 12M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 6M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 8W</span><span class="st">`</span>) <span class="sc">~</span> Dose, <span class="at">data =</span> data_1)</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a><span class="co"># Print and summarize the results</span></span>
-<span id="cb2-11"><a></a><span class="fu">print</span>(manova_model)</span>
-<span id="cb2-12"><a></a><span class="fu">summary</span>(manova_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="co"># Load the dataset</span></span>
+<span id="cb2-4"><a></a>data_1 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../../Blood Pressure.csv"</span>)</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Perform the MANOVA</span></span>
+<span id="cb2-7"><a></a>manova_model <span class="ot">&lt;-</span> <span class="fu">manova</span>(<span class="fu">cbind</span>(<span class="st">`</span><span class="at">BP 8M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 12M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 6M</span><span class="st">`</span>, <span class="st">`</span><span class="at">BP 8W</span><span class="st">`</span>) <span class="sc">~</span> Dose, <span class="at">data =</span> data_1)</span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a><span class="co"># Print and summarize the results</span></span>
+<span id="cb2-10"><a></a><span class="fu">print</span>(manova_model)</span>
+<span id="cb2-11"><a></a><span class="fu">summary</span>(manova_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="overview-of-principal-components-analysis-pca" class="title-slide slide level1 center">
@@ -489,7 +487,7 @@ Dr.&nbsp;Joshua Lambert
 <section id="example-of-pca" class="slide level2">
 <h2>Example of PCA</h2>
 <ul>
-<li>Use the <a href="Body Measurements.csv" download="">Body Measurements.csv</a> dataset</li>
+<li>Use the <a href="../../Body Measurements.csv" download="">Body Measurements.csv</a> dataset</li>
 <li>Weight and physical measurements of 22 male subjects</li>
 </ul>
 </section>
@@ -506,7 +504,7 @@ Dr.&nbsp;Joshua Lambert
 
 <h3 id="r-code-example-2">R Code Example</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Load Data</span></span>
-<span id="cb3-2"><a></a>your_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Body Measurements.csv"</span>)</span>
+<span id="cb3-2"><a></a>your_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../../Body Measurements.csv"</span>)</span>
 <span id="cb3-3"><a></a></span>
 <span id="cb3-4"><a></a><span class="co"># Run PCA</span></span>
 <span id="cb3-5"><a></a>pca_model <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(your_data, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
@@ -571,7 +569,7 @@ Dr.&nbsp;Joshua Lambert
 <section id="example-of-efa" class="slide level2">
 <h2>Example of EFA</h2>
 <ul>
-<li>Use the <a href="Williams.sav" download="">Williams.sav</a> dataset</li>
+<li>Use the <a href="../../Williams.sav" download="">Williams.sav</a> dataset</li>
 <li>28-item questionnaire on organizational ability</li>
 </ul>
 </section>
@@ -588,18 +586,17 @@ Dr.&nbsp;Joshua Lambert
 
 <h3 id="r-code-example-3">R Code Example</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Install and load the libraries</span></span>
-<span id="cb4-2"><a></a><span class="fu">install.packages</span>(<span class="st">"haven"</span>)</span>
-<span id="cb4-3"><a></a><span class="fu">install.packages</span>(<span class="st">"psych"</span>)</span>
-<span id="cb4-4"><a></a><span class="fu">library</span>(haven)</span>
-<span id="cb4-5"><a></a><span class="fu">library</span>(psych)</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="co"># Read the file</span></span>
-<span id="cb4-8"><a></a>efa_data <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"Williams.sav"</span>)</span>
-<span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a><span class="co"># Run the EFA</span></span>
-<span id="cb4-11"><a></a>efa_result <span class="ot">&lt;-</span> <span class="fu">fa</span>(efa_data, <span class="at">nfactors =</span> <span class="dv">3</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
-<span id="cb4-12"><a></a><span class="fu">print</span>(efa_result)</span>
-<span id="cb4-13"><a></a><span class="fu">fa.diagram</span>(efa_result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"haven"</span>, <span class="st">"psych"</span>), <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb4-3"><a></a><span class="fu">library</span>(haven)</span>
+<span id="cb4-4"><a></a><span class="fu">library</span>(psych)</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="co"># Read the file</span></span>
+<span id="cb4-7"><a></a>efa_data <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sav</span>(<span class="st">"../../Williams.sav"</span>)</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a><span class="co"># Run the EFA</span></span>
+<span id="cb4-10"><a></a>efa_result <span class="ot">&lt;-</span> <span class="fu">fa</span>(efa_data, <span class="at">nfactors =</span> <span class="dv">3</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb4-11"><a></a><span class="fu">print</span>(efa_result)</span>
+<span id="cb4-12"><a></a><span class="fu">fa.diagram</span>(efa_result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="summary-and-applications" class="title-slide slide level1 center">

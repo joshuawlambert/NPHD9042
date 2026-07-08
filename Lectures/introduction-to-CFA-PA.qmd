@@ -15,6 +15,47 @@ format:
 
 ### Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)
 
+## R Setup for Examples
+
+Run this setup code before the example below.
+It installs any missing packages and helps R find the lecture data files whether you run the code from the course project folder, the `Lectures` folder, or the downloaded `Lectures/code` folder.
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+lecture_data <- function(filename) {
+  args <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", args, value = TRUE)
+  script_dir <- if (length(file_arg) > 0) {
+    dirname(normalizePath(sub("^--file=", "", file_arg)))
+  } else {
+    getwd()
+  }
+
+  candidates <- c(
+    filename,
+    file.path("Lectures", filename),
+    file.path("..", filename),
+    file.path(script_dir, "..", filename),
+    file.path(script_dir, "..", "..", "Lectures", filename)
+  )
+
+  hit <- candidates[file.exists(candidates)]
+  if (length(hit) == 0) {
+    stop("Could not find ", filename, ". Run from the project, Lectures, or Lectures/code folder.")
+  }
+  normalizePath(hit[1], winslash = "/")
+}
+
+load_packages(c("lavaan"))
+```
+
 ## Understanding the Basics of Confirmatory Factor Analysis (CFA) and Path Analysis (PA) and their Application in Nursing Research
 
 Confirmatory Factor Analysis (CFA) and Path Analysis (PA) are essential statistical techniques used to validate measurement models and examine causal relationships between variables, respectively. These methods are crucial in nursing research for understanding complex phenomena and testing theoretical models.
@@ -61,10 +102,8 @@ You can use the <a href="worland5.csv" download>worland5.csv</a> as an example. 
 #### R Code Example
 
 ```{r, eval=FALSE}
-# Load necessary library
-library(lavaan)
 #load your data
-mydata3<-read.csv("worland5.csv") # adjust the file path accordingly
+mydata3 <- read.csv(lecture_data("worland5.csv"))
 
 # Define the model
 model <- 'adjustment  =~ motiv + harm + stabi'
@@ -73,7 +112,7 @@ model <- 'adjustment  =~ motiv + harm + stabi'
 fit <- cfa(model, data = mydata3)
 
 # Summarize the results
-summary(fit, fit.measures = TRUE)
+summary(fit, fit.measures = TRUE, standardized = TRUE)
 ```
 
 ### Interpreting Your Results, Refining, Write-up

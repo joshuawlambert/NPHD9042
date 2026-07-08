@@ -35,12 +35,55 @@ For the project, choose one dataset from the three provided below. Remember SEM 
 6. Interpretation and Inference: Once your model is checked in step 5, interpret the estimated path coefficients to understand the relationships between variables and draw conclusions based on the findings.
 
 ## Project Datasets
-1. [Thomsen2.sav](Thomsen2.sav)
-2. [JobSatisfaction2.jmp](JobSatisfaction2.jmp)
-3. [OnlineConsumerData2.jmp](OnlineConsumerData2.jmp)
+1. [Thomsen2.sav](Thomsen2.sav) -- R-ready with the `haven` package
+2. [JobSatisfaction2.jmp](JobSatisfaction2.jmp) -- legacy JMP file; use a CSV/R-ready export before analyzing in R
+3. [OnlineConsumerData2.jmp](OnlineConsumerData2.jmp) -- legacy JMP file; use a CSV/R-ready export before analyzing in R
 
 For more information about these datasets please see [this document](FinalProject_DataDescription2.docx).
 
+## R Starter Code
+
+The code below uses `Thomsen2.sav`, which can be read directly in R.
+Use it as a template for your own SEM model specification.
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+assignment_data <- function(filename) {
+  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
+  hit <- candidates[file.exists(candidates)]
+  if (length(hit) == 0) stop("Could not find ", filename)
+  normalizePath(hit[1], winslash = "/")
+}
+
+load_packages(c("haven", "lavaan", "semPlot"))
+
+thomsen <- haven::read_sav(assignment_data("Thomsen2.sav"))
+thomsen <- as.data.frame(lapply(thomsen, as.numeric))
+
+# Example SEM template. Update the latent variables and paths so they match
+# your group's research question and theory.
+sem_model <- '
+  ECQ =~ ecq1 + ecq2 + ecq3 + ecq4 + ecq5 + ecq6 + ecq7 +
+         ecq8 + ecq9 + ecq10 + ecq11 + ecq12 + ecq13 + ecq14
+
+  POMS =~ poms4d + poms8d + poms12d + poms14d +
+          poms20d + poms23d + poms28d + poms33d
+
+  POMS ~ ECQ + psqik1 + consult + telephone
+'
+
+sem_fit <- lavaan::sem(sem_model, data = thomsen, missing = "fiml")
+summary(sem_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
+parameterEstimates(sem_fit, standardized = TRUE)
+semPlot::semPaths(sem_fit, what = "std", edge.label.cex = 0.7, layout = "tree")
+```
 
 ## Project Proposal
 - **Length**: 1-2 pages.

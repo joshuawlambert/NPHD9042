@@ -17,6 +17,47 @@ format:
 
 # Introduction to Structural Equation Modeling (SEM)
 
+## R Setup for Examples
+
+Run this setup code before the example below.
+It installs any missing packages and helps R find the lecture data files whether you run the code from the course project folder, the `Lectures` folder, or the downloaded `Lectures/code` folder.
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+lecture_data <- function(filename) {
+  args <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", args, value = TRUE)
+  script_dir <- if (length(file_arg) > 0) {
+    dirname(normalizePath(sub("^--file=", "", file_arg)))
+  } else {
+    getwd()
+  }
+
+  candidates <- c(
+    filename,
+    file.path("Lectures", filename),
+    file.path("..", filename),
+    file.path(script_dir, "..", filename),
+    file.path(script_dir, "..", "..", "Lectures", filename)
+  )
+
+  hit <- candidates[file.exists(candidates)]
+  if (length(hit) == 0) {
+    stop("Could not find ", filename, ". Run from the project, Lectures, or Lectures/code folder.")
+  }
+  normalizePath(hit[1], winslash = "/")
+}
+
+load_packages(c("lavaan", "semPlot"))
+```
+
 ![](images/sem1.png)
 
 Structural Equation Modeling (SEM) is a comprehensive statistical approach used to model complex relationships among variables. In other words, SEM integrates various techniques into a singular model structure. On this page, we will cover the fundamentals of SEM, including how to build, analyze, and interpret SEM models accurately.
@@ -179,10 +220,7 @@ You can use the <a href="worland5.csv" download>worland5.csv</a> as an example. 
 #### R Code Example
 
 ```{r, eval=FALSE}
-# Load necessary libraries
-library(lavaan)
-
-mydata2<-read.csv("worland5.csv") # adjust the file path accordingly
+mydata2 <- read.csv(lecture_data("worland5.csv"))
 
 # Specify the SEM model
 
@@ -200,11 +238,8 @@ model <- '
 MySEM_model <- sem(model, data=mydata2)
 
 # Summarize the results
-summary(MySEM_model, fit.measures = TRUE)
+summary(MySEM_model, fit.measures = TRUE, standardized = TRUE)
 
 # visualize the SEM model
-library(semPlot)
-
- # Visualize the path diagram
 semPaths(MySEM_model, what = "std", edge.label.cex = 0.8, layout = "tree")
 ```

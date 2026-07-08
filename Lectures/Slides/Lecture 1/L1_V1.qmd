@@ -107,7 +107,7 @@ format:
 
 ## Example Discriminant Analysis
 
-- Use the <a href="Owl Diet.csv" download>Owl Diet.csv</a> dataset
+- Use the <a href="../../Owl Diet.csv" download>Owl Diet.csv</a> dataset
 - Fictional information about types of owl diets
 
 ---
@@ -123,14 +123,13 @@ format:
 ### R Code Example
 
 ```r
-#Install Packages
-install.packages("MASS")
-install.packages("readr")
+# Install packages if needed
+install.packages(c("MASS", "readr"), repos = "https://cloud.r-project.org")
 library(readr)
 library(MASS)
 
 # Read the data file
-data <-read_csv("Owl Diet.csv")
+data <- readr::read_csv("../../Owl Diet.csv")
 str(data)
 
 # Perform the Discriminant Analysis
@@ -185,7 +184,7 @@ summary(lda_model)
 
 ## Example MANOVA
 
-- Use the <a href="Blood Pressure.csv" download>Blood Pressure.csv</a> dataset
+- Use the <a href="../../Blood Pressure.csv" download>Blood Pressure.csv</a> dataset
 - Fictional data on blood pressure medication and repeated BP measurements
 
 ---
@@ -201,11 +200,10 @@ summary(lda_model)
 ### R Code Example
 
 ```r
-# Load necessary libraries
-library(tidyverse)
+library(readr)
 
 # Load the dataset
-data_1 <-read_csv("Blood Pressure.csv")
+data_1 <- readr::read_csv("../../Blood Pressure.csv")
 
 # Perform the MANOVA
 manova_model <- manova(cbind(`BP 8M`, `BP 12M`, `BP 6M`, `BP 8W`) ~ Dose, data = data_1)
@@ -263,7 +261,7 @@ summary(manova_model)
 
 ## Example of PCA
 
-- Use the <a href="Body Measurements.csv" download>Body Measurements.csv</a> dataset
+- Use the <a href="../../Body Measurements.csv" download>Body Measurements.csv</a> dataset
 - Weight and physical measurements of 22 male subjects
 
 ---
@@ -280,7 +278,7 @@ summary(manova_model)
 
 ```r
 # Load Data
-your_data <- read.csv("Body Measurements.csv")
+your_data <- read.csv("../../Body Measurements.csv")
 
 # Run PCA
 pca_model <- prcomp(your_data, scale = TRUE)
@@ -342,7 +340,7 @@ plot(pca_model, type = "l")
 
 ## Example of EFA
 
-- Use the <a href="Williams.sav" download>Williams.sav</a> dataset
+- Use the <a href="../../Williams.sav" download>Williams.sav</a> dataset
 - 28-item questionnaire on organizational ability
 
 ---
@@ -359,13 +357,12 @@ plot(pca_model, type = "l")
 
 ```r
 # Install and load the libraries
-install.packages("haven")
-install.packages("psych")
+install.packages(c("haven", "psych"), repos = "https://cloud.r-project.org")
 library(haven)
 library(psych)
 
 # Read the file
-efa_data <- haven::read_sav("Williams.sav")
+efa_data <- haven::read_sav("../../Williams.sav")
 
 # Run the EFA
 efa_result <- fa(efa_data, nfactors = 3, rotate = "varimax")

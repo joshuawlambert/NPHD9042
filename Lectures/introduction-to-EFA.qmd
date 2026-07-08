@@ -23,6 +23,47 @@ format:
 
 # Introduction to Exploratory Factor Analysis (EFA)
 
+## R Setup for Examples
+
+Run this setup code before the example below.
+It installs any missing packages and helps R find the lecture data files whether you run the code from the course project folder, the `Lectures` folder, or the downloaded `Lectures/code` folder.
+
+```{r, eval=FALSE}
+load_packages <- function(pkgs) {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing) > 0) {
+    install.packages(missing, repos = "https://cloud.r-project.org")
+  }
+  invisible(lapply(pkgs, library, character.only = TRUE))
+}
+
+lecture_data <- function(filename) {
+  args <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", args, value = TRUE)
+  script_dir <- if (length(file_arg) > 0) {
+    dirname(normalizePath(sub("^--file=", "", file_arg)))
+  } else {
+    getwd()
+  }
+
+  candidates <- c(
+    filename,
+    file.path("Lectures", filename),
+    file.path("..", filename),
+    file.path(script_dir, "..", filename),
+    file.path(script_dir, "..", "..", "Lectures", filename)
+  )
+
+  hit <- candidates[file.exists(candidates)]
+  if (length(hit) == 0) {
+    stop("Could not find ", filename, ". Run from the project, Lectures, or Lectures/code folder.")
+  }
+  normalizePath(hit[1], winslash = "/")
+}
+
+load_packages(c("haven", "psych"))
+```
+
 Exploratory Factor Analysis (EFA) is a statistical technique used to uncover the underlying structure of a relatively large set of variables. It is often used in research to identify latent variables that cannot be measured directly.
 
 ## Understanding the Basics of Latent Variables
@@ -190,9 +231,7 @@ Here is how to perform EFA in R: Use the <a href="Williams.sav" download>William
 #### R Code Example
 
 ```{r, eval=FALSE}
-library(haven)
-my_data<-read_sav("Williams.sav")
-library(psych)
+my_data <- haven::read_sav(lecture_data("Williams.sav"))
 head(my_data)
 
 efa <- fa(my_data, nfactors = 2, rotate = "varimax")
