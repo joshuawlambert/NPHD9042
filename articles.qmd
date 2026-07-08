@@ -12,7 +12,7 @@ editor: source
 -   [Secondary data analysis as an efficient and effective approach to nursing research](Articles/Secondary_data_analysis.pdf)
 -   [On exploratory factor analysis: A review of recent evidence, an assessment of current practice, and recommendations for future use](Articles/EFA_Review_paper.pdf)
 -   [Modeling and variable selection in epidemiologic analysis.](Articles/Modeling_and_variable_selection.pdf)
--   [Understanding poisson regression. ](Articles/Poisson_regression.pdf)
+-   [Understanding poisson regression. ](Articles/poisson_regression.pdf)
 -   [Zero-inflated Poisson modeling of fall risk factors in community-dwelling older adults.](Articles/Zero_inflated_poisson.pdf)
 -   [Testing and verifying nursing theory by confirmatory factor analysis](Articles/Testing_nursing_theory_by_CFA.pdf)
 -   [The process and utility of classification and regression tree methodology in nursing research.](Articles/classification_regression_tree.pdf)

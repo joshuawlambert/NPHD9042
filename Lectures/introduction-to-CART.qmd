@@ -14,6 +14,8 @@ editor:
     wrap: sentence
 ---
 
+[**Download R Code for this Lecture**](code/introduction-to-CART.R){ .btn .btn-primary }
+
 {{< video https://youtu.be/Yb6Pyv_7DHs >}}
 
 ### Introduction to CART Modeling
@@ -41,7 +43,6 @@ It splits the data into subsets based on the value of input variables, aiming to
 
 - The data: National Health and Nutrition Examination Study (NHANES) from 1999-2004. Approximately 15,000 observations. Primary outcome is whether the subject got periodontitis (yes/no). Explanatory or Predictor Variables: Smoking Status, Age, Total Teeth, and Gender.
 
-
 ![](images/cart2.png)
 
 *A simple cross-section of two variables by the outcome (color: blue=no perio, red=perio), looking for tree splits that classify the outcome accurately. Can you find any splits with age and total teeth?*
@@ -51,9 +52,6 @@ It splits the data into subsets based on the value of input variables, aiming to
 *A tree of depth 2 (left) and tree of depth 3 (right).*
 
 ![](images/cart3.png)
-
-
-
 
 ### Types of Outcomes: Categorical and Continuous
 
@@ -94,184 +92,20 @@ To illustrate a CART model, consider predicting diabetes based on patient charac
 You can use the <a href="Titanic_Passengers.csv" download>Titanic_Passengers</a> dataset for this example.
 This dataset contains information on the survival status of Titanic passengers.
 
-#### JMP Instructions:
+#### R Code Example
 
-<details>
+```{r, eval=FALSE}
+# Load necessary libraries
+library(rpart)
+library(rpart.plot)
 
-<summary>JMP Instructions:</summary>
+# Load the dataset
+Passengers <- read.csv("Titanic_Passengers.csv") # adjust path
 
-<ul>
+# Define the CART model
+model <- rpart(Survived ~ Sex+Age+Passenger.Class+Port,
+data = Passengers , method = "class")
 
-<li>Go to <code>Analyze</code> \> <code>Predictive Modeling</code> \> <code>Partition</code>.</li>
-
-<li>Select the response variable and predictor variables.</li>
-
-<li>Click <code>OK</code> to build the tree.</li>
-
-</ul>
-
-</details>
-
-#### R Code Example:
-
-<details>
-
-<summary>R Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-        # Load necessary libraries
-        library(rpart)
-        library(rpart.plot)
-
-        # Load the dataset
-        Passengers <- read.csv("Titanic_Passengers.csv") # adust path
-      
-        
-        # Define the CART model
-        model <- rpart(Survived ~ Sex+Age+Passenger.Class+Port, 
-        data = Passengers , method = "class")
-
-        # Plot the decision tree
-        rpart.plot(model)
-      </pre>
+# Plot the decision tree
+rpart.plot(model)
 ```
-</li>
-
-</ul>
-
-</details>
-
-#### Python Code Example with Titanic data:
-
-<details>
-
-<summary>Python Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-        from sklearn.tree import DecisionTreeClassifier
-        from sklearn import tree
-        import pandas as pd
-
-        # Load the dataset
-        passengers = pd.read_csv('Titanic_Passengers.csv')
-        X = passengers[['Sex', 'Age', 'Passenger.Class', 'Port']]
-        y = passengers['Survived']
-
-        # Define the CART model
-        model = DecisionTreeClassifier()
-
-        # Train the model
-        model.fit(X, y)
-
-        # Plot the decision tree
-        tree.plot_tree(model)
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>
-
-#### SPSS Instructions:
-
-<details>
-
-<summary>SPSS Instructions:</summary>
-
-<ul>
-
-<li>Go to <code>Analyze</code> \> <code>Classify</code> \> <code>Tree</code>.</li>
-
-<li>Select the dependent variable and independent variables.</li>
-
-<li>Choose the type of tree (e.g., CHAID, CRT).</li>
-
-<li>Click <code>OK</code> to run the analysis.</li>
-
-</ul>
-
-</details>
-
-
-<details>
-
-<summary>SPSS Code Instructions:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-
-* Use SPSS inbuilt customer data as an example (modify the file path)
-GET 
-  FILE='C:\Program Files\IBM\SPSS\Statistics\22\Samples\English\customer_subset.sav'. 
-
-* Decision Tree Dependent: home ownership ,Indep VARS  education age and income 
-
-TREE homeown [n] BY ed [s] age [s] inccat [o] 
-  /TREE DISPLAY=TOPDOWN NODES=STATISTICS BRANCHSTATISTICS=YES NODEDEFS=YES SCALE=AUTO
-  /DEPCATEGORIES USEVALUES=[0 1]
-  /PRINT MODELSUMMARY CLASSIFICATION RISK
-  /METHOD TYPE=CHAID
-  /GROWTHLIMIT MAXDEPTH=AUTO MINPARENTSIZE=100 MINCHILDSIZE=50
-  /VALIDATION TYPE=NONE OUTPUT=BOTHSAMPLES
-  /CHAID ALPHASPLIT=0.05 ALPHAMERGE=0.05 SPLITMERGED=NO CHISQUARE=PEARSON CONVERGE=0.001 
-    MAXITERATIONS=100 ADJUST=BONFERRONI INTERVALS=10
-  /COSTS EQUAL.
-<pre>
-```
-
-</li>
-
-</ul>
-
-</details>
-
-
-#### Stata Code Example:
-
-<details>
-
-<summary>Stata Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-// Load the auto data in stata
-sysuse auto,clear
-        
-// browse to see the cols and rows ofthe data
-browse
-        
-// use the help function to review crtrees module
-help(crtrees)
- 
-// Define and fit the CART model (regression tree) : continuous  outcome
-       crtrees price trunk weight length foreign gear_ratio, seed(12345) detail tree
-
-// Define and fit the CART model (classification tree): categorical outcome
-  crtrees foreign price trunk weight length gear_ratio,classification impurity(gini)tree
-        
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>

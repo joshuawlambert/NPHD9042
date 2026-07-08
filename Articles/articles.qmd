@@ -28,7 +28,7 @@ format:
 
   This paper provides an overview of variable selection methods in clinical prediction modeling, including backward elimination, forward selection, stepwise selection, and all possible subset selection. The authors discuss the importance of selecting appropriate variables to improve model accuracy and reduce complexity. They also address stopping rules and selection criteria like Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC), emphasizing the balance between model simplicity and fit.
 
-4. [Understanding Poisson Regression](possion_regression.pdf)
+4. [Understanding Poisson Regression](poisson_regression.pdf)
 
   *Author*: Matthew J. Hayat
 

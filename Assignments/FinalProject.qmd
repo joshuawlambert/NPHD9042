@@ -29,7 +29,7 @@ For the project, choose one dataset from the three provided below. Remember SEM 
 
 1. Choose Dataset (from list below).
 2. Model Specification: develop a theoretical model based on your groups research question or hypothesis.
-3. Model Estimation: use JMP or other software to estimate the parameters of the model that best fit the data.
+3. Model Estimation: use R to estimate the parameters of the model that best fit the data.
 4. Model Fit Evaluation: Comparative Fit Index (CFI), Root Mean Square Error of Approximation (RMSEA).
 5. Model Modification: modify the model by adding or removing paths, allowing latent variables to correlate, or including additional observed variables.
 6. Interpretation and Inference: Once your model is checked in step 5, interpret the estimated path coefficients to understand the relationships between variables and draw conclusions based on the findings.
@@ -47,7 +47,7 @@ For more information about these datasets please see [this document](FinalProjec
 - **Content**:
   - **Introduction**: Briefly introduce the topic and the relevance of the dataset you chose.
   - **Goals and Hypotheses**: Clearly state the goals and hypotheses of your project.
-  - **Statistical Analysis Plan (SAP)**: Outline the course of action for data collection, data analysis, the type of statistical software used, and plans for results and interpretations. Refer to the [provided paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9726973/) for more details on what to include in your SAP.
+  - **Statistical Analysis Plan (SAP)**: Outline the course of action for data collection, data analysis, the R packages and workflow used, and plans for results and interpretations. Refer to the [provided paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9726973/) for more details on what to include in your SAP.
   - **Meeting**: Schedule a meeting with Dr. Lambert at least two weeks prior to the project presentation to discuss your proposal.
 
 ## Project Presentation

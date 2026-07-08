@@ -11,6 +11,8 @@ format:
     css: styles.css
 ---
 
+[**Download R Code for this Lecture**](code/introduction-to-CFA-PA.R){ .btn .btn-primary }
+
 ### Introduction to Confirmatory Factor Analysis (CFA) and Path Analysis (PA)
 
 ## Understanding the Basics of Confirmatory Factor Analysis (CFA) and Path Analysis (PA) and their Application in Nursing Research
@@ -22,13 +24,11 @@ Confirmatory Factor Analysis (CFA) and Path Analysis (PA) are essential statisti
 -   **Exploratory Factor Analysis (EFA)** is used when you do not have a clear hypothesis about the structure or number of factors.
 -   **Confirmatory Factor Analysis (CFA)** is used when you have specific hypotheses or models to test based on theory or prior research.
 
-### Example: One Factor Analysis using SPSS Anxiety Questionnaire
-
-To conduct a CFA with an anxiety questionnaire in SPSS:
+To conduct a CFA with an anxiety questionnaire in R:
 
 1.  **Data Preparation**: Ensure data is clean and appropriately coded.
 2.  **Model Specification**: Define the factor structure based on theoretical expectations.
-3.  **Run CFA in Statistical Software**: See below for examples.
+3.  **Run CFA in R**: See below for an example.
 
 ### Interpreting CFA Symbols, Intro to Path Analysis
 
@@ -54,155 +54,27 @@ A path diagram visually represents the hypothesized relationships among variable
 -   **Comparative Fit Index (CFI)**: Values close to 1 indicate a good fit.
 -   **Root Mean Square Error of Approximation (RMSEA)**: Values less than 0.06 indicate a good fit.
 
-### Example, Hands-on CFA Exercise in Statistical Software
+### Example, Hands-on CFA Exercise in R
 
 You can use the <a href="worland5.csv" download>worland5.csv</a> as an example. This hypothetical dataset examines the effects of student background on academic achievement. It contains 9 observed variables (Motivation, Harmony, Stability, Negative Parental Psychology, SES, Verbal IQ, Reading, Arithmetic and Spelling) and 3 hypothesized latent constructs (Adjustment, Risk, Achievement).
 
-#### JMP Instructions:
+#### R Code Example
 
-<details>
+```{r, eval=FALSE}
+# Load necessary library
+library(lavaan)
+#load your data
+mydata3<-read.csv("worland5.csv") # adjust the file path accordingly
 
-<summary>JMP Instructions:</summary>
+# Define the model
+model <- 'adjustment  =~ motiv + harm + stabi'
 
-<ul>
+# Fit the model
+fit <- cfa(model, data = mydata3)
 
-<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Multivariate</code>.</li>
-
-<li>Select your variables and click <code>OK</code>.</li>
-
-<li>Configure the model and click <code>Run</code>.</li>
-
-</ul>
-
-</details>
-
-#### R Code Example:
-
-<details>
-
-<summary>R Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-        # Load necessary library
-        library(lavaan)
-        #load your data
-        mydata3<-read.csv("worland5.csv") # adjust the file path accordingly
-
-        # Define the model
-        model <- 'adjustment  =~ motiv + harm + stabi'
-
-        # Fit the model
-        fit <- cfa(model, data = mydata3)
-
-        # Summarize the results
-        summary(fit, fit.measures = TRUE)
-      </pre>
+# Summarize the results
+summary(fit, fit.measures = TRUE)
 ```
-</li>
-
-</ul>
-
-</details>
-
-#### Python Code Example:
-
-<details>
-
-<summary>Python Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>   pip install factor_analyzer
-        import pandas as pd
-        from factor_analyzer import FactorAnalyzer
-        from factor_analyzer import ConfirmatoryFactorAnalyzer
-        from factor_analyzer import ModelSpecificationParser
-        
-        
-        df_features = pd.read_csv('worland5.csv')
-
-        # Define the model
-        model = {
-          'adjustment': ['motiv', 'harm', 'stabi'],
-        }
-        
-      model_spec = ModelSpecificationParser.parse_model_specification_from_dict(df_features,
-                                                                              model)
-        # Fit the model
-        cfa = ConfirmatoryFactorAnalyzer(model_spec)
-        cfa.fit(df_features.values)
-
-        # Display the results
-        print(cfa.loadings_)
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>
-
-#### SPSS Instructions:
-
-<details>
-
-<summary>SPSS Instructions:</summary>
-
-CFA can be performed in AMOS, a seperate tool built for conducting SEM for 
-SPSS users
-see more about the AMOS platform at
-
-http://amosdevelopment.com/
-<ul>
-
-
-
-</ul>
-
-</details>
-
-#### Stata Code Example:
-
-<details>
-
-<summary>Stata Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-        //  CFA for Single-factor measurement model
-        // Load data, example is the auto data in stata
-        use auto, clear
-         
-
-        // Define and fit the model
-        
-        sem (trunk weight length gear_ratio<-Auto_character)
-
-        //get standardized values
-       
-        sem, standardized
-        
-        //get godness of fit
-        estat gof,stats(all)
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>
 
 ### Interpreting Your Results, Refining, Write-up
 

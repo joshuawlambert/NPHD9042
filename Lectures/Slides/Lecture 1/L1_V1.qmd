@@ -107,16 +107,16 @@ format:
 
 ## Example Discriminant Analysis
 
-- Use the <a href="Owl Diet.csv" download>Owl Diet.sav</a> dataset
+- Use the <a href="Owl Diet.csv" download>Owl Diet.csv</a> dataset
 - Fictional information about types of owl diets
 
 ---
 
-### JMP Instructions
+### R Workflow
 
-1. Go to Analyze > Multivariate Methods > Discriminant
-2. Select outcome measurements as Y, response, and categorical predictor as X
-3. Click OK
+1. Load the CSV data with `readr::read_csv()`
+2. Fit the discriminant model with `MASS::lda()`
+3. Review group separation and classifications
 
 ---
 
@@ -134,7 +134,7 @@ data <-read_csv("Owl Diet.csv")
 str(data)
 
 # Perform the Discriminant Analysis
-lda_model <- lda(species ~ skull_length + teeth_row + palatine_foramen + jaw_length, data = data)
+lda_model <- lda(`species` ~ `skull length` + `teeth row` + `palatine foramen` + `jaw length`, data = data)
 print(lda_model)
 summary(lda_model)
 ```
@@ -190,14 +190,11 @@ summary(lda_model)
 
 ---
 
-### JMP Instructions
+### R Workflow
 
-1. Go to File > Open and select "Blood Pressure.csv"
-2. Go to Analyze > Fit Model
-3. Move BP measurements to "Y, Responses"
-4. Move Dose to "Construct Model Effects"
-5. Select MANOVA in "Personality" dropdown
-6. Click Run and select Compound from red triangle menu
+1. Load the CSV data with `readr::read_csv()`
+2. Fit the MANOVA with `manova()`
+3. Review multivariate test statistics with `summary()`
 
 ---
 
@@ -211,7 +208,7 @@ library(tidyverse)
 data_1 <-read_csv("Blood Pressure.csv")
 
 # Perform the MANOVA
-manova_model <- manova(cbind(BP_8M, BP_12M, BP_6M, BP_8W) ~ Dose, data = data_1)
+manova_model <- manova(cbind(`BP 8M`, `BP 12M`, `BP 6M`, `BP 8W`) ~ Dose, data = data_1)
 
 # Print and summarize the results
 print(manova_model)
@@ -271,12 +268,11 @@ summary(manova_model)
 
 ---
 
-### JMP Instructions
+### R Workflow
 
-1. Go to Analyze > Multivariate Methods > Principal Components
-2. Select variables for analysis
-3. Click OK
-4. Select Scree Plot and Eigenvalues from red triangle menu
+1. Load the CSV data with `read.csv()`
+2. Fit the PCA with `prcomp()`
+3. Review variance explained and the scree plot
 
 ---
 
@@ -351,12 +347,11 @@ plot(pca_model, type = "l")
 
 ---
 
-### JMP Instructions
+### R Workflow
 
-1. Go to Analyze > Multivariate Methods > Factor Analysis
-2. Select variables and place them into the Y, columns
-3. Select variance estimation method (e.g., REML) and click OK
-4. Review factor loadings and scree plot
+1. Load the `.sav` file with `haven::read_sav()`
+2. Fit the factor model with `psych::fa()`
+3. Review factor loadings, variance explained, and the factor diagram
 
 ---
 
@@ -370,7 +365,7 @@ library(haven)
 library(psych)
 
 # Read the file
-efa_data <- read.csv("Williams.sav")
+efa_data <- haven::read_sav("Williams.sav")
 
 # Run the EFA
 efa_result <- fa(efa_data, nfactors = 3, rotate = "varimax")

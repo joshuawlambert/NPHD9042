@@ -23,7 +23,7 @@ Feel free to reach out to me with any questions or concerns. I'm here to help yo
 
 ## Overview of NPHD9042
 
-NPHD9042 is designed to provide an in-depth exploration of advanced *multivariate* statistical methods relevant to healthcare research. The course emphasizes practical applications using statistical software. Topics include:
+NPHD9042 is designed to provide an in-depth exploration of advanced *multivariate* statistical methods relevant to healthcare research. The course emphasizes practical applications using R. Topics include:
 
 ### [Introduction to Multivariate Analysis](Lectures/introduction-to-multivariate.qmd)
 

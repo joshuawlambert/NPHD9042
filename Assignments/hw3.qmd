@@ -53,7 +53,7 @@ Please explain your answers with full sentences/paragraphs.
 -   **Estimate the parameters**: a1-a4.
 -   **Instructions**:
     -   Use SEM (Structural Equation Modeling) to estimate the parameters.
-    -   You can use JMP or AMOS to answer this question.
+    -   Use R with the lavaan package to answer this question.
     -   The dependent variable is a latent variable **Acad** with three observed indicators: **math**, **science**, and **socst**.
     -   There are two additional observed variables: the independent variable **female** and a mediator variable **read**.
 -   **Questions**:

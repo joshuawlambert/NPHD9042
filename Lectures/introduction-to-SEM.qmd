@@ -11,6 +11,8 @@ format:
     css: styles.css
 ---
 
+[**Download R Code for this Lecture**](code/introduction-to-SEM.R){ .btn .btn-primary }
+
 {{< video https://youtu.be/4i9OFdNtSdI >}}
 
 # Introduction to Structural Equation Modeling (SEM)
@@ -168,76 +170,41 @@ Structural Equation Modeling (SEM) is a comprehensive statistical approach used 
 
 ## Software Examples
 
-### Building and Analyzing SEM Models in JMP
+### Building and Analyzing SEM Models in R
 
 You can use the <a href="worland5.csv" download>worland5.csv</a> as an example. This hypothetical dataset examines the effects of student background on academic achievement. It contains 9 observed variables (Motivation, Harmony, Stability, Negative Parental Psychology, SES, Verbal IQ, Reading, Arithmetic and Spelling) and 3 hypothesized latent constructs (Adjustment, Risk, Achievement).
 
-<details>
-
-<summary>JMP Instructions:</summary>
-
-<ul>
-
-<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Structural Equation Modeling</code>.</li>
-
-<li>Select your variables and specify the model structure in the diagram window.</li>
-
-<li>Use the <code>Add Path</code> tool to draw paths between variables as hypothesized in your model.</li>
-
-<li>Specify latent variables by selecting observed variables and defining them as indicators.</li>
-
-<li>Click <code>Run</code> to estimate the model.</li>
-
-<li>Review the output for path coefficients, model fit indices, and other diagnostics.</li>
-
-</ul>
-
-</details>
-
 ### Building and Analyzing SEM Models in R
 
-<details>
+#### R Code Example
 
-<summary>R Code Example:</summary>
+```{r, eval=FALSE}
+# Load necessary libraries
+library(lavaan)
 
-<ul>
+mydata2<-read.csv("worland5.csv") # adjust the file path accordingly
 
-<li>
+# Specify the SEM model
 
-```{=html}
-<pre>
-        # Load necessary libraries
-        library(lavaan)
-        
-        mydata2<-read.csv("worland5.csv") # adjust the file path accordingly
-        
-        # Specify the SEM model
-        
-        model <- '
-          # Measurement model
-          adjustment  =~ motiv + harm + stabi
-          risk =~ verbal + ppsych + ses
-          achievement =~ read + arith + spell
-          
-          # Structural model
-          achievement ~ adjustment+ risk
-        '
-        
-        # Fit the model
-        MySEM_model <- sem(model, data=mydata2)
-        
-        # Summarize the results
-        summary(MySEM_model, fit.measures = TRUE)
-        
-        # visualize the SEM model
-        library(semPlot)
+model <- '
+  # Measurement model
+  adjustment  =~ motiv + harm + stabi
+  risk =~ verbal + ppsych + ses
+  achievement =~ read + arith + spell
 
-         # Visualize the path diagram
-        semPaths(MySEM_model, what = "std", edge.label.cex = 0.8, layout = "tree")
-      </pre>
+  # Structural model
+  achievement ~ adjustment+ risk
+'
+
+# Fit the model
+MySEM_model <- sem(model, data=mydata2)
+
+# Summarize the results
+summary(MySEM_model, fit.measures = TRUE)
+
+# visualize the SEM model
+library(semPlot)
+
+ # Visualize the path diagram
+semPaths(MySEM_model, what = "std", edge.label.cex = 0.8, layout = "tree")
 ```
-</li>
-
-</ul>
-
-</details>

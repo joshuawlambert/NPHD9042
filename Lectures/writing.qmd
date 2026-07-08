@@ -29,7 +29,7 @@ Describe the sample and how data were collected, specifying the dependent (group
 
 **Variables**: The dependent variable was patient risk category (low, medium, high). Predictor variables included age, blood pressure, cholesterol levels, and BMI.
 
-**Procedure**: Discriminant analysis was conducted using SPSS to classify patients into risk categories. The stepwise method was used to select the most significant predictors.
+**Procedure**: Discriminant analysis was conducted using R to classify patients into risk categories. The stepwise method was used to select the most significant predictors.
 
 ### Results
 
@@ -85,7 +85,7 @@ Describe the sample and how data were collected, specifying the variables includ
 
 **Variables**: The variables included in the PCA were 20 health indicators such as physical activity, diet, stress levels, and sleep quality.
 
-**Procedure**: PCA was conducted using Python to reduce the dimensionality of the dataset. The number of components was determined based on eigenvalues greater than 1 and the scree plot.
+**Procedure**: PCA was conducted using R to reduce the dimensionality of the dataset. The number of components was determined based on eigenvalues greater than 1 and the scree plot.
 
 ### Results
 
@@ -169,7 +169,7 @@ Describe the sample and how data were collected, specifying the variables includ
 
 **Variables**: The variables included in the path analysis were health behaviors (diet, exercise), psychological factors (stress, anxiety), and health outcomes (BMI, blood pressure).
 
-**Procedure**: Path analysis was conducted using Mplus to examine the direct and indirect effects of health behaviors and psychological factors on health outcomes.
+**Procedure**: Path analysis was conducted using R to examine the direct and indirect effects of health behaviors and psychological factors on health outcomes.
 
 ### Results
 
@@ -225,7 +225,7 @@ Describe the sample and how data were collected, specifying the variables includ
 
 **Variables**: The CART analysis included variables such as age, BMI, blood sugar levels, and lifestyle factors (diet, physical activity).
 
-**Procedure**: CART was conducted using Python with the scikit-learn library. The decision tree was trained to predict diabetes status based on the predictor variables.
+**Procedure**: CART was conducted using R with the rpart package. The decision tree was trained to predict diabetes status based on the predictor variables.
 
 ### Results
 

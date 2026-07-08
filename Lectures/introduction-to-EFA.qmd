@@ -11,6 +11,8 @@ format:
     css: styles.css
 ---
 
+[**Download R Code for this Lecture**](code/introduction-to-EFA.R){ .btn .btn-primary }
+
 {{< video https://youtu.be/_quJr7yC29M >}}
 
 {{< video https://youtu.be/1xkkOJ210OU >}}
@@ -183,144 +185,22 @@ By understanding the basics of EFA, latent variables, and their application in r
 
 # Software Examples
 
-Here are examples of how to perform EFA in various statistical software packages: Use the <a href="Williams.sav" download>Williams.sav</a> dataset to complete the analysis. This dataset contains an 28-item questionnaire (measured on a 7-point Likert scale) on organizational ability. It contains 5 theoretical dimensions based on the underlying measurement theory: (1) preference for organization; (2) goal achievement; (3) planning approach; (4) acceptance of delays; and (5) preference for routine.
+Here is how to perform EFA in R: Use the <a href="Williams.sav" download>Williams.sav</a> dataset to complete the analysis. This dataset contains an 28-item questionnaire (measured on a 7-point Likert scale) on organizational ability. It contains 5 theoretical dimensions based on the underlying measurement theory: (1) preference for organization; (2) goal achievement; (3) planning approach; (4) acceptance of delays; and (5) preference for routine.
 
-<details>
+#### R Code Example
 
-<summary>JMP Instructions:</summary>
-
-<ul>
-
-<li>Go to <code>Analyze</code> \> <code>Multivariate Methods</code> \> <code>Factor Analysis</code>.</li>
-
-<li>Select your variables and move them to the <code>Y, Columns</code> box.</li>
-
-<li>Click <code>OK</code>.</li>
-
-</ul>
-
-</details>
-
-<details>
-
-<summary>R Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-       library(haven)
+```{r, eval=FALSE}
+library(haven)
 my_data<-read_sav("Williams.sav")
 library(psych)
 head(my_data)
 
 efa <- fa(my_data, nfactors = 2, rotate = "varimax")
-        
+
         # View results
 print(efa)
 
 print(loadings(efa ))
-      </pre>
 ```
-</li>
 
-</ul>
-
-</details>
-
-<details>
-
-<summary>Python Code Example:</summary>
-
-<ul>
-
-<li>
-
-```{=html}
-<pre>
-import pandas as pd
-import pyreadstat
-from factor_analyzer import FactorAnalyzer
-
-# Read SPSS file
-my_data, metadata = pyreadstat.read_sav("Williams.sav")
-
-# Convert to pandas DataFrame
-my_data = pd.DataFrame(my_data)
-
-# Display the first few rows of the DataFrame
-print(my_data.head())
-
-# Perform EFA
-efa = FactorAnalyzer(n_factors=2, rotation="varimax")
-efa.fit(my_data)
-
-# View results
-print(efa.get_factor_variance())
-print(efa.loadings_)
-
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>
-
-<details>
-
-<summary>SPSS Instructions:</summary>
-
-<ul>
-
-<li>Go to <code>Analyze</code> \> <code>Dimension Reduction</code> \> <code>Factor</code>.</li>
-
-<li>Select your variables and move them to the <code>Variables</code> box.</li>
-
-<li>Choose the extraction method (e.g., Principal Axis Factoring) and rotation method (e.g., Varimax).</li>
-
-<li>Click <code>OK</code>.</li>
-
-</ul>
-
-</details>
-
-<details>
-
-<summary>STATA Code Example:</summary>
-
-<ul>
-
-<li>
-
-
-**see stata examples here** https://libguides.princeton.edu/factor
-```{=html}
-<pre>
-        // Load the necessary data. eg auto data
-        sysuse auto,clear
-        
-        // Perform EFA
-        *simple factor analysis 
-       factor price trunk weight length foreign gear_ratio
-       
-        *then rotate to see rotated factors
-        rotate 
-        
-        *Principal-component factor analysis 
-         factor price trunk weight length foreign gear_ratio,pcf
-         
-          *then rotate to see rotated factors
-         rotate
-        
-      </pre>
-```
-</li>
-
-</ul>
-
-</details>
-
-By understanding the basics of EFA and its application in various software environments, you can effectively analyze latent structures in your data and contribute valuable insights to your research.
+By understanding the basics of EFA and its application in R, you can effectively analyze latent structures in your data and contribute valuable insights to your research.

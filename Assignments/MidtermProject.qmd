@@ -38,7 +38,7 @@ You can find a table of raw data [here](https://openpsychometrics.org/_rawdata/)
 - **Content**:
   - **Introduction**: Briefly introduce the topic and the relevance of the dataset you chose.
   - **Goals and Hypotheses**: Clearly state the goals and hypotheses of your project.
-  - **Statistical Analysis Plan (SAP)**: Outline the course of action for data collection, data analysis, the type of statistical software used, and plans for results and interpretations. Refer to the [provided paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9726973/) for more details on what to include in your SAP.
+  - **Statistical Analysis Plan (SAP)**: Outline the course of action for data collection, data analysis, the R packages and workflow used, and plans for results and interpretations. Refer to the [provided paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9726973/) for more details on what to include in your SAP.
   - **Meeting**: Schedule a meeting with Dr. Lambert at least two weeks prior to the project presentation to discuss your proposal.
 
 ## Project Presentation

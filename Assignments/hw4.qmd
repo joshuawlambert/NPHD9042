@@ -12,7 +12,7 @@ format:
 
 ## Homework 4
 
-In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <a href="hsb2.csv" download>hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. You can choose whichever options you would like in JMP (or another statistical software) to create your tree.
+In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <a href="hsb2.csv" download>hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. Use R to create your tree; you may choose the rpart options that are appropriate for your final model.
 
 With your final tree created, please answer the following questions:
 
