@@ -14,59 +14,14 @@ format:
 
 In this homework, you will create a classification tree. This classification tree will classify observations into those that have a science score above the mean and those that have a science score at or below the mean (you will need to create this column yourself). You will use all available variables (besides Id and the outcome) to create your classification tree. To know whether your tree is good at predicting out-of-sample observations, you will randomly use 60% of the data for training, 20% for validation and 20% for testing. Use the <a href="hsb2.csv" download>hsb2.csv</a> to create the classification tree to classify whether participants have a science score at or below the mean. Use R to create your tree; you may choose the rpart options that are appropriate for your final model.
 
-## R Starter Code
+## R Coding Tips
 
-```{r, eval=FALSE}
-load_packages <- function(pkgs) {
-  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
-  if (length(missing) > 0) {
-    install.packages(missing, repos = "https://cloud.r-project.org")
-  }
-  invisible(lapply(pkgs, library, character.only = TRUE))
-}
-
-assignment_data <- function(filename) {
-  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
-  hit <- candidates[file.exists(candidates)]
-  if (length(hit) == 0) stop("Could not find ", filename)
-  normalizePath(hit[1], winslash = "/")
-}
-
-load_packages(c("rpart", "rpart.plot"))
-
-hsb2 <- read.csv(assignment_data("hsb2.csv"))
-hsb2$science_above_mean <- factor(
-  ifelse(hsb2$science > mean(hsb2$science, na.rm = TRUE), "Above mean", "At or below mean")
-)
-
-set.seed(9042)
-row_id <- sample(seq_len(nrow(hsb2)))
-n_train <- floor(0.60 * nrow(hsb2))
-n_validation <- floor(0.20 * nrow(hsb2))
-
-train <- hsb2[row_id[1:n_train], ]
-validation <- hsb2[row_id[(n_train + 1):(n_train + n_validation)], ]
-test <- hsb2[row_id[(n_train + n_validation + 1):nrow(hsb2)], ]
-
-tree_model <- rpart::rpart(
-  science_above_mean ~ . - id - science,
-  data = train,
-  method = "class",
-  control = rpart.control(cp = 0.01)
-)
-
-rpart.plot::rpart.plot(tree_model)
-printcp(tree_model)
-plotcp(tree_model)
-
-train_pred <- predict(tree_model, newdata = train, type = "class")
-validation_pred <- predict(tree_model, newdata = validation, type = "class")
-test_pred <- predict(tree_model, newdata = test, type = "class")
-
-mean(train_pred != train$science_above_mean)
-mean(validation_pred != validation$science_above_mean)
-mean(test_pred != test$science_above_mean)
-```
+- Read `hsb2.csv` and create a factor outcome indicating whether `science` is above the sample mean.
+- Use `set.seed()` before randomly splitting the rows into training, validation, and test sets.
+- Use `rpart::rpart(..., method = "class")` to fit the classification tree.
+- Exclude `id`, the original `science` score, and the new outcome from the predictor set where appropriate.
+- Use `rpart.plot::rpart.plot()` to create the tree figure.
+- Use `predict(..., type = "class")` and compare predicted versus observed classes to calculate misclassification rates.
 
 With your final tree created, please answer the following questions:
 

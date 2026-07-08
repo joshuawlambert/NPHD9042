@@ -13,49 +13,13 @@ format:
 
 This assignment uses the <a href="hsb2.csv" download>hsb2.csv</a>
 
-## R Starter Code
+## R Coding Tips
 
-```{r, eval=FALSE}
-load_packages <- function(pkgs) {
-  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
-  if (length(missing) > 0) {
-    install.packages(missing, repos = "https://cloud.r-project.org")
-  }
-  invisible(lapply(pkgs, library, character.only = TRUE))
-}
-
-assignment_data <- function(filename) {
-  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
-  hit <- candidates[file.exists(candidates)]
-  if (length(hit) == 0) stop("Could not find ", filename)
-  normalizePath(hit[1], winslash = "/")
-}
-
-load_packages(c("lavaan"))
-
-hsb2 <- read.csv(assignment_data("hsb2.csv"))
-
-# Question 1: observed-variable path model from the first diagram
-path_model <- '
-  math ~ a1*read + a2*write
-  science ~ b1*read + b2*math + b3*write
-'
-
-path_fit <- lavaan::sem(path_model, data = hsb2)
-summary(path_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
-parameterEstimates(path_fit, standardized = TRUE)
-
-# Question 2: SEM model from the second diagram
-sem_model <- '
-  Acad =~ 1*math + a3*science + a4*socst
-  read ~ a1*female
-  Acad ~ a2*read
-'
-
-sem_fit <- lavaan::sem(sem_model, data = hsb2)
-summary(sem_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
-parameterEstimates(sem_fit, standardized = TRUE)
-```
+- Read `hsb2.csv` and keep variable names lowercase (`read`, `write`, `math`, `science`, `socst`, `female`).
+- Use `lavaan::sem()` for both the observed-variable path model and the SEM model.
+- In lavaan syntax, use `~` for regressions and `=~` for latent-variable measurement.
+- Label parameters as shown in the diagrams so estimates map back to the figures.
+- Request standardized estimates, fit measures, and R-squared values when summarizing the model.
 
 ## Data Dictionary for hsb2.csv
 

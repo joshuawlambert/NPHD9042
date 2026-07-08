@@ -36,92 +36,14 @@ The variables included in the dataset are:
 
 Follow each step and provide tables, figures, and explanations when appropriate. <a href="HW2.csv" download>HW2.csv</a> dataset and answer the following questions using R. NHANES
 
-## R Starter Code
+## R Coding Tips
 
-```{r, eval=FALSE}
-load_packages <- function(pkgs) {
-  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
-  if (length(missing) > 0) {
-    install.packages(missing, repos = "https://cloud.r-project.org")
-  }
-  invisible(lapply(pkgs, library, character.only = TRUE))
-}
-
-assignment_data <- function(filename) {
-  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
-  hit <- candidates[file.exists(candidates)]
-  if (length(hit) == 0) stop("Could not find ", filename)
-  normalizePath(hit[1], winslash = "/")
-}
-
-load_packages(c("readr", "MASS"))
-
-nhanes <- readr::read_csv(assignment_data("HW2.csv"))
-
-nhanes$race <- factor(nhanes$race)
-nhanes$edu <- factor(nhanes$edu)
-nhanes$smoke <- factor(nhanes$smoke)
-nhanes$diab <- factor(nhanes$diab)
-
-predictors <- c(
-  "race", "edu", "ses", "BMXBMI", "smoke", "diab",
-  "LBXALC", "LBXBEC", "LBXCRY", "LBXGTC", "LBXLUZ",
-  "LBXLYC", "LBXVIA", "LBXVIE"
-)
-
-linear_formula <- as.formula(
-  paste("PhysicalHealthDaysinLast30 ~", paste(predictors, collapse = " + "))
-)
-
-# Simple linear regressions for each predictor
-simple_linear_models <- lapply(
-  predictors,
-  function(x) lm(as.formula(paste("PhysicalHealthDaysinLast30 ~", x)), data = nhanes)
-)
-names(simple_linear_models) <- predictors
-lapply(simple_linear_models, summary)
-
-# Forward and backward selection for multiple linear regression
-linear_null <- lm(PhysicalHealthDaysinLast30 ~ 1, data = nhanes)
-linear_full <- lm(linear_formula, data = nhanes)
-
-linear_forward <- MASS::stepAIC(
-  linear_null,
-  scope = list(lower = formula(linear_null), upper = formula(linear_full)),
-  direction = "forward"
-)
-summary(linear_forward)
-confint.default(linear_forward)
-
-linear_backward <- MASS::stepAIC(linear_full, direction = "backward")
-summary(linear_backward)
-confint.default(linear_backward)
-
-# Multi-step hierarchical regression
-linear_step1 <- lm(PhysicalHealthDaysinLast30 ~ diab + BMXBMI, data = nhanes)
-linear_step2 <- lm(PhysicalHealthDaysinLast30 ~ diab + BMXBMI + smoke, data = nhanes)
-linear_step3 <- lm(PhysicalHealthDaysinLast30 ~ diab + BMXBMI + smoke + LBXVIE + LBXALC, data = nhanes)
-anova(linear_step1, linear_step2, linear_step3)
-summary(linear_step3)
-confint.default(linear_step3)
-
-# Forward selection for logistic regression
-logistic_formula <- as.formula(
-  paste("PhysicalHealthDaysinLast30_2 ~", paste(predictors, collapse = " + "))
-)
-
-logistic_null <- glm(PhysicalHealthDaysinLast30_2 ~ 1, data = nhanes, family = binomial)
-logistic_full <- glm(logistic_formula, data = nhanes, family = binomial)
-
-logistic_forward <- MASS::stepAIC(
-  logistic_null,
-  scope = list(lower = formula(logistic_null), upper = formula(logistic_full)),
-  direction = "forward"
-)
-summary(logistic_forward)
-exp(coef(logistic_forward))
-exp(confint.default(logistic_forward))
-```
+- Read `HW2.csv`, then convert categorical predictors (`race`, `edu`, `smoke`, `diab`) to factors.
+- Build single-predictor `lm()` models first, then a full multivariable `lm()` model.
+- Use `MASS::stepAIC()` for forward/backward selection if using AIC.
+- Use nested `lm()` models and `anova()` for the hierarchical regression section.
+- Use `glm(..., family = binomial)` for the logistic outcome and exponentiate coefficients/confidence intervals for odds ratios.
+- Keep a clean table of estimates, p-values, and confidence intervals for each final model.
 
 ## Data Pre-Processing
 

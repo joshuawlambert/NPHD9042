@@ -41,49 +41,14 @@ For the project, choose one dataset from the three provided below. Remember SEM 
 
 For more information about these datasets please see [this document](FinalProject_DataDescription2.docx).
 
-## R Starter Code
+## R Coding Tips
 
-The code below uses `Thomsen2.sav`, which can be read directly in R.
-Use it as a template for your own SEM model specification.
-
-```{r, eval=FALSE}
-load_packages <- function(pkgs) {
-  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
-  if (length(missing) > 0) {
-    install.packages(missing, repos = "https://cloud.r-project.org")
-  }
-  invisible(lapply(pkgs, library, character.only = TRUE))
-}
-
-assignment_data <- function(filename) {
-  candidates <- c(filename, file.path("Assignments", filename), file.path("..", filename))
-  hit <- candidates[file.exists(candidates)]
-  if (length(hit) == 0) stop("Could not find ", filename)
-  normalizePath(hit[1], winslash = "/")
-}
-
-load_packages(c("haven", "lavaan", "semPlot"))
-
-thomsen <- haven::read_sav(assignment_data("Thomsen2.sav"))
-thomsen <- as.data.frame(lapply(thomsen, as.numeric))
-
-# Example SEM template. Update the latent variables and paths so they match
-# your group's research question and theory.
-sem_model <- '
-  ECQ =~ ecq1 + ecq2 + ecq3 + ecq4 + ecq5 + ecq6 + ecq7 +
-         ecq8 + ecq9 + ecq10 + ecq11 + ecq12 + ecq13 + ecq14
-
-  POMS =~ poms4d + poms8d + poms12d + poms14d +
-          poms20d + poms23d + poms28d + poms33d
-
-  POMS ~ ECQ + psqik1 + consult + telephone
-'
-
-sem_fit <- lavaan::sem(sem_model, data = thomsen, missing = "fiml")
-summary(sem_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE)
-parameterEstimates(sem_fit, standardized = TRUE)
-semPlot::semPaths(sem_fit, what = "std", edge.label.cex = 0.7, layout = "tree")
-```
+- Use `haven::read_sav()` for `Thomsen2.sav`. If you choose a legacy `.jmp` dataset, first use an R-ready CSV export.
+- Use the data-description document to identify indicators, latent variables, and plausible paths before writing model syntax.
+- Use `lavaan::sem()` or `lavaan::cfa()` depending on whether you are fitting a full SEM or measurement model.
+- In lavaan syntax, use `=~` for latent-variable measurement and `~` for regressions/paths.
+- Request fit measures, standardized estimates, modification indices only when theoretically defensible, and R-squared values.
+- Use `semPlot::semPaths()` if you want a path diagram for the presentation or paper.
 
 ## Project Proposal
 - **Length**: 1-2 pages.
