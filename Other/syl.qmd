@@ -7,11 +7,310 @@ format:
     code-fold: true
     code-tools: true
     css: styles.css
-editor: 
-  markdown: 
+editor:
+  markdown:
     wrap: 72
 ---
 
 # NPHD9042 - Applied Multivariate Analysis
 
 [Syllabus Download](syl.pdf)
+
+<style>
+main.content table.table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: normal;
+}
+
+main.content a {
+  overflow-wrap: anywhere;
+}
+</style>
+
+## General Course Information
+
+**Course:** NPHD9042 - Applied Multivariate Analysis
+
+**Term:** Fall 2025
+
+**Class meeting time and location:** Procter 281N or Microsoft Teams via calendar invitation
+
+- 9:30-10:20: Asynchronous video lecture
+- 10:30-12:20: Discussion and lab time, either in person or online via Teams
+
+**Credit hours/contact hours:**
+
+| Type | Credit Hours | Clock Hours |
+|---|---:|---:|
+| Course | 3 | 45 |
+
+**Instructor:** Joshua Lambert, PhD, MS, MS
+
+**Email:** [Joshua.lambert@uc.edu](mailto:Joshua.lambert@uc.edu)
+
+**Office hours:** By appointment. Please email to schedule.
+
+## Communication Policy
+
+Email is the best way to reach me. Please allow at least 24 hours for a response. Emails sent on Fridays will be answered no later than Monday. If you do not hear from me within two business days, please email me again.
+
+## Course Description
+
+This course is the second of two courses that introduce advanced statistical methods in doctoral-level nursing research. Multivariate method selection, application, results interpretation, and results presentation are stressed in a flipped-classroom/workshop format. Methods introduced include MANOVA, MANCOVA, factor analysis, principal components analysis, and structural equation modeling. An introduction to power and sample size calculation by method is integrated throughout.
+
+**Prerequisite definition:** To take this course, students must have taken NPHD9040 with a minimum grade of B- and be enrolled in the NRES-PHD plan.
+
+## Classroom Procedures and Policies
+
+All classroom procedures and policies, including required technology, communication policy, netiquette, technology support, accessibility policy, academic integrity, academic honor pledge, religious accommodations, student resources, and student assault resources, can be found on the Canvas course home page under the Classroom Procedures and Policies link.
+
+## Student Learning Outcomes
+
+At the end of this course, the student will:
+
+| SLO | Student Learning Outcome |
+|---|---|
+| SLO #1 | Select the appropriate multivariate analysis method based on research objectives and types of variables to be analyzed. |
+| SLO #2 | Generate required sample size and power for prototypical analyses by multivariate method, concurrently addressing inclusion of under-represented groups in research. |
+| SLO #3 | Display an introductory level ability to manage data and conduct preliminary analyses to assess and address data quality and potential violations of statistical assumptions by multivariate method. |
+| SLO #4 | Demonstrate an introductory level ability to generate results using R and interpret relevant results generated for each method. |
+
+## Pre- and Co-requisites
+
+**Pre-requisites:** NPHD9000 and NPHD9040 or equivalent.
+
+**Co-requisites:** None.
+
+## Course Format
+
+All students are required to register for Canvas. You are expected to check the course Canvas site and course website regularly:
+
+<https://joshuawlambert.github.io/NPHD9042/>
+
+You will need access to Microsoft files on the device that you use for the course. If you do not have access to this software on your home device, you can purchase this software at the UC bookstore or use the computers at Procter Hall.
+
+You are required to check your UC email account regularly. The faculty will contact you via your UC email account as needed and will not use a personal, non-UC email account.
+
+## Teaching Strategies
+
+Teaching strategies include data analysis and interpretation group workshops, class quizzes, and peer review.
+
+Active learning strategies will be used throughout the semester. Examples include faculty- and student-led discussions, short essay papers, creating professional academic documents, and presentations.
+
+The textbook readings and additional resources posted in the modules provide background information so you can explore, learn about, discuss, and debate the use of statistical analysis in research.
+
+Grammar, spelling, and correct statistical formatting are critical components of scholarly written communication and all professional communication. Please include references when referring to the work of others.
+
+Canvas will be used to submit assignments and communicate. Email will also be used to communicate. The course website will be used to distribute course materials, including lecture notes, videos, homework, projects, and other assignments/materials.
+
+## Teaching: Course Philosophy
+
+In my classroom, I view teaching as a partnership between professor and student, grounded in mutual respect, curiosity, and real-world relevance. I strive to connect personally with each learner, recognizing that life circumstances shape how they engage with material, and to present content through verbal, visual, and written modalities so every learning style is addressed.
+
+For PhD nursing students, my focus is on experiential learning: applying statistical methods directly to their own research questions, interpreting results in a supportive, non-competitive environment, and using technology to model the data-driven decisions that shape modern nursing practice. By weaving these elements together, I aim to equip students with both confidence and competence in biostatistics so they can advance science and improve patient care.
+
+## To Be Successful
+
+- Get familiar with the course website, video lectures, and other materials.
+- Ask questions promptly.
+- Engage with the material.
+- Familiarize yourself with R and RStudio.
+- Meet deadlines consistently.
+- Use office hours and resources.
+- Participate actively online.
+- Apply concepts to your research.
+
+## Course Materials
+
+### Technology Requirements
+
+- Computer, PC or Mac
+- Access to the internet
+- Course website: <https://joshuawlambert.github.io/NPHD9042/>
+- Microsoft Office, including Word, Excel, and PowerPoint
+- R and RStudio
+- University email address
+- Canvas
+
+### Required Resources
+
+R and RStudio will be used for course examples, assignments, and lab learning.
+
+### Optional Resources
+
+Many possible resources are available through the course website:
+
+<https://joshuawlambert.github.io/NPHD9042/>
+
+## Assessments, Assignments, and Grading Policies
+
+### Method for Calculation of Course Grade
+
+#### Workshop Attendance and Participation: 30%
+
+There are 13 class workshops.
+
+#### Homework: 30%
+
+There are four homework assignments. All homework will be given exactly two weeks prior to its due date. Homework is meant to assess your understanding of statistical software, conceptual knowledge of methods discussed, data quality issues, and statistical interpretation. Each homework assignment will have a more detailed outline of how points are distributed.
+
+| Homework Component | Course Grade |
+|---|---:|
+| Methods | 10% |
+| Software | 10% |
+| Data quality and statistical interpretation | 10% |
+| **Total** | **30%** |
+
+#### Project Proposals: 10%
+
+Students will complete two proposals: one midterm proposal and one final proposal. Students will choose a dataset of their liking. Dr. Lambert will provide up to three datasets, but students can choose their own. The student should set up a meeting with Dr. Lambert to discuss the project and planned course of action. Each project will require a proposal. The proposal should be 1-2 pages and should mimic a statistical analysis plan.
+
+| Proposal Component | Course Grade |
+|---|---:|
+| Meeting with Dr. Lambert | 2% |
+| Statistical analysis plan | 6% |
+| Goals | 2% |
+| **Total** | **10%** |
+
+#### Project Papers: 20%
+
+Students will complete two papers: one midterm paper and one final paper. Each project will require a 3-5 page paper. The student's paper is meant to outline the hypothesis of interest, dataset, statistical methods, results, and conclusions.
+
+| Paper Component | Course Grade |
+|---|---:|
+| Hypothesis | 4% |
+| Dataset description | 4% |
+| Statistical methods | 4% |
+| Results | 4% |
+| Conclusion | 4% |
+| **Total** | **20%** |
+
+#### Project Presentations: 10%
+
+Students will complete two presentations: one midterm presentation and one final presentation. Each project will include a PowerPoint slide presentation or poster presentation. Creativity is an important aspect of the presentation. All five parts mentioned in the paper grading section should be included with details. Presentations should mimic a conference speed or poster presentation. Presentations may be in person, online synchronous, or online asynchronous. Presentations should be around 10 minutes with 5 minutes of questions.
+
+| Presentation Component | Course Grade |
+|---|---:|
+| Creativity | 2% |
+| Project paper components | 5% |
+| Questions | 3% |
+| **Total** | **10%** |
+
+### Grade Breakdown by Group
+
+| Assignment Group | Course Grade |
+|---|---:|
+| Workshop attendance and participation | 30% |
+| Homework | 30% |
+| Project proposals | 10% |
+| Project papers | 20% |
+| Project presentations | 10% |
+
+### Grading Scale for Final Grade
+
+Failure to achieve at least 80% (B-) in the course constitutes failure for purposes of the College of Nursing, and the course will have to be retaken.
+
+| Letter Grade | Percentage |
+|---|---:|
+| A | 93-100% |
+| A- | 90-92.9% |
+| B+ | 87-89.9% |
+| B | 83-86.9% |
+| B- | 80-82.9% |
+| C+ | 77-79.9% |
+| C | 73-76.9% |
+| C- | 70-72.9% |
+| D+ | 67-69.9% |
+| D | 63-66.9% |
+| D- | 60-62.9% |
+| F | <60% |
+
+## Late Work Policy
+
+Assignments are due by midnight on the date indicated in the course calendar unless otherwise stated. Midnight is based on Eastern Daylight Time/Eastern Standard Time as applicable. This time references the local time in Cincinnati for the duration of the course.
+
+If you anticipate a conflict with any of the due dates, please contact the faculty by email to negotiate any changes. Assignments submitted late without prior written approval will receive a score of 0%.
+
+## Grade Review
+
+Any question or discussion over earned points for an examination and/or assignment should be addressed by appealing in writing by email to the course faculty. Refer to the Student Handbook for additional policies regarding grading.
+
+## Withdrawal Policy
+
+Students who wish to withdraw from the course are expected to notify the instructor prior to withdrawal. Students can view withdrawal dates on UC's Academic Calendars site. Students who have satisfactorily completed course requirements up to the date of withdrawal will be eligible for a "W" grade; however, it is the instructor's right to change the "W" to an "F" if it is determined to be warranted through the final grading process. Be sure to refer to UC web registration information regarding other areas that may be affected by the course.
+
+## Classroom Procedures/Policies
+
+### Technology Support
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+### Accessibility Policy
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+### Academic Integrity
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+### Academic Honor Pledge
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+### AI Course Policy
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+Use generative AI only as a learning aid, not a substitute for your own work. All work submitted must be authored by the student; AI can assist with explanations, brainstorming, or code snippets, but the final text, analysis, and coding must reflect the student's own understanding. Students are responsible for verifying all facts, debugging code, and ensuring originality; failure to comply may result in assignment or course penalties per university policy. Please reach out to me if you have any questions.
+
+### Religious Accommodations
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+## Student Resources
+
+### Title IX
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+### Sexual Assault Resources
+
+Please review by accessing the link in the Classroom Procedures, Policies, and Student Resources module in the Canvas course.
+
+## Assignment Directions
+
+Please read the directions carefully on each homework and project assignment webpage:
+
+- [Homework 1](../Assignments/hw1.html)
+- [Homework 2](../Assignments/hw2.html)
+- [Homework 3](../Assignments/hw3.html)
+- [Homework 4](../Assignments/hw4.html)
+- [Midterm Project](../Assignments/MidtermProject.html)
+- [Final Project](../Assignments/FinalProject.html)
+
+## Course Calendar
+
+| Class | Date | Assignment/Due Date | Topic | Reading | Note |
+|---:|---|---|---|---|---|
+| 1 | 26-Aug | HW 1 assigned | Intro to Multivariate | [Link](../Lectures/introduction-to-multivariate.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 2 | 2-Sep | Midterm Project assigned | PCA/EFA | [Link](../Lectures/introduction-to-EFA.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 3 | 9-Sep |  | EFA |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 4 | 16-Sep | HW 1 due at midnight | EFA/Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 5 | 23-Sep | Midterm Project proposal; HW 2 assigned | Adv Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 6 | 30-Sep |  | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 7 | 7-Oct | Midterm Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 8 | 14-Oct | Midterm Project paper; HW 3 assigned | Intro to SEM | [Link](../Lectures/introduction-to-SEM.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 9 | 21-Oct | Final Project assigned; HW 2 due at midnight | SEM |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 10 | 28-Oct |  | SEM, CFA, and PA | [Link](../Lectures/introduction-to-CFA-PA.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 11 | 4-Nov |  | Reading Day |  | No class: Election Day |
+| 12 | 11-Nov | HW 3 due at midnight; HW 4 assigned | CART | [Link](../Lectures/introduction-to-CART.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 13 | 18-Nov | Final Project proposal due | ML and LLMs | [Link](../Lectures/writing.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 14 | 25-Nov | HW 4 due at midnight | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 15 | 2-Dec | Final Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 16 | 9-Dec | Final Project paper | Finals Week |  | No class |
+
+## Changes to Course Syllabus
+
+This syllabus is merely the instructor's projection of the expected progress through this course. Circumstances may arise that warrant its revision. Should these circumstances arise, this course syllabus may be subject to change. Students will be notified in a timely manner. The instructor also reserves the right to introduce materials not covered in the textbook. For any situation or topic not covered in the syllabus, please refer to the Nursing Student Handbook.
