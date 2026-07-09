@@ -27,13 +27,33 @@ main.content table.table {
 main.content a {
   overflow-wrap: anywhere;
 }
+
+@media print {
+  nav.navbar,
+  header,
+  .quarto-title-block,
+  .quarto-btn-toggle,
+  .quarto-code-tools,
+  #quarto-sidebar,
+  #quarto-margin-sidebar,
+  .toc-actions,
+  .page-navigation {
+    display: none !important;
+  }
+
+  main.content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}
 </style>
 
 ## General Course Information
 
 **Course:** NPHD9042 - Applied Multivariate Analysis
 
-**Term:** Fall 2025
+**Term:** Fall 2026
 
 **Class meeting time and location:** Procter 281N or Microsoft Teams via calendar invitation
 
@@ -150,7 +170,7 @@ Many possible resources are available through the course website:
 
 #### Workshop Attendance and Participation: 30%
 
-There are 13 class workshops.
+There are 14 class workshops.
 
 #### Homework: 30%
 
@@ -292,24 +312,38 @@ Please read the directions carefully on each homework and project assignment web
 
 ## Course Calendar
 
+The Fall 2026 University of Cincinnati semester runs from August 24 through December 12, 2026. Full-session classes run from August 24 through December 5, 2026, and exam week runs from December 6 through December 12, 2026.
+
+### University Calendar Dates
+
+| Date | University Calendar Note | Course Impact |
+|---|---|---|
+| Monday, September 7 | Labor Day | UC is closed; no Tuesday class meeting is affected. |
+| Monday, October 12 | Reading Day | Regular classes are suspended; no Tuesday class meeting is affected. |
+| Tuesday, November 3 | Reading Day | No class meeting. |
+| Wednesday, November 11 | Veteran's Day | UC is closed; no Tuesday class meeting is affected. |
+| Thursday, November 26-Sunday, November 29 | Thanksgiving Weekend | UC is closed; no Tuesday class meeting is affected. |
+| Saturday, December 5 | Fall classes end | Final instructional week ends. |
+| Sunday, December 6-Saturday, December 12 | Exam Week | No regular class meeting. |
+
 | Class | Date | Assignment/Due Date | Topic | Reading | Note |
 |---:|---|---|---|---|---|
-| 1 | 26-Aug | HW 1 assigned | Intro to Multivariate | [Link](../Lectures/introduction-to-multivariate.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 2 | 2-Sep | Midterm Project assigned | PCA/EFA | [Link](../Lectures/introduction-to-EFA.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 3 | 9-Sep |  | EFA |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 4 | 16-Sep | HW 1 due at midnight | EFA/Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 5 | 23-Sep | Midterm Project proposal; HW 2 assigned | Adv Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 6 | 30-Sep |  | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 7 | 7-Oct | Midterm Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 8 | 14-Oct | Midterm Project paper; HW 3 assigned | Intro to SEM | [Link](../Lectures/introduction-to-SEM.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 9 | 21-Oct | Final Project assigned; HW 2 due at midnight | SEM |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 10 | 28-Oct |  | SEM, CFA, and PA | [Link](../Lectures/introduction-to-CFA-PA.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 11 | 4-Nov |  | Reading Day |  | No class: Election Day |
-| 12 | 11-Nov | HW 3 due at midnight; HW 4 assigned | CART | [Link](../Lectures/introduction-to-CART.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 13 | 18-Nov | Final Project proposal due | ML and LLMs | [Link](../Lectures/writing.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 14 | 25-Nov | HW 4 due at midnight | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
-| 15 | 2-Dec | Final Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
-| 16 | 9-Dec | Final Project paper | Finals Week |  | No class |
+| 1 | Tuesday, August 25 | HW 1 assigned | Intro to Multivariate | [Link](../Lectures/introduction-to-multivariate.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 2 | Tuesday, September 1 | Midterm Project assigned | PCA/EFA | [Link](../Lectures/introduction-to-EFA.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 3 | Tuesday, September 8 |  | EFA |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 4 | Tuesday, September 15 | HW 1 due at midnight | EFA/Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 5 | Tuesday, September 22 | Midterm Project proposal; HW 2 assigned | Adv Regression | [Link](../Lectures/advanced_regression.html) | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 6 | Tuesday, September 29 |  | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 7 | Tuesday, October 6 | Midterm Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 8 | Tuesday, October 13 | Midterm Project paper; HW 3 assigned | Intro to SEM | [Link](../Lectures/introduction-to-SEM.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 9 | Tuesday, October 20 | Final Project assigned; HW 2 due at midnight | SEM |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 10 | Tuesday, October 27 |  | SEM, CFA, and PA | [Link](../Lectures/introduction-to-CFA-PA.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 11 | Tuesday, November 3 |  | Reading Day |  | No class: UC reading day |
+| 12 | Tuesday, November 10 | HW 3 due at midnight; HW 4 assigned | CART | [Link](../Lectures/introduction-to-CART.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 13 | Tuesday, November 17 | Final Project proposal due | ML and LLMs | [Link](../Lectures/writing.html) | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 14 | Tuesday, November 24 | HW 4 due at midnight | Work Day |  | Asynchronous/9:30-10:20: Watch video lecture; Teams/10:30-12:20: Discussion/lab |
+| 15 | Tuesday, December 1 | Final Project presentation | Presentation Day |  | Asynchronous/9:30-10:20: Watch video lecture; In person/10:30-12:20: Discussion/lab |
+| 16 | Tuesday, December 8 | Final Project paper | Finals Week |  | No regular class meeting |
 
 ## Changes to Course Syllabus
 
